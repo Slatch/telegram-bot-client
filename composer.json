@@ -1,10 +1,9 @@
 {
-  "name": "Slatch/telegram-bot-client",
-  "description": "PHP client for telegram bots api",
+  "name": "slatch/telegram-bot-client",
   "type": "library",
-  "require": {
-    "php": ">=5.3.0"
-  },
+  "description": "PHP client for telegram bots api",
+  "keywords": [],
+  "homepage": "https://leonov.xyz",
   "license": "MIT",
   "authors": [
     {
@@ -12,5 +11,14 @@
       "email": "andrew@leonov.xyz"
     }
   ],
+  "require": {
+    "php": ">=7.0.0",
+    "ext-curl": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Slatch\\TelegramBotClient\\": "src/"
+    }
+  },
   "minimum-stability": "dev"
 }

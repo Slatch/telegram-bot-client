@@ -5,3 +5,8 @@ Installing:
 ```bash
 composer require "Slatch/telegram-bot-client"
 ```
+
+Usage:
+```php
+
+```
