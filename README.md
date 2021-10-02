@@ -9,16 +9,21 @@ composer require "slatch/telegram-bot-client"
 Usage:
 
 ```php
+use GuzzleHttp\Client;
+
 use Slatch\TelegramBotClient\Api\Config;
-use Slatch\TelegramBotClient\Client;
+use Slatch\TelegramBotClient\Client as TelegramClient;
 use Slatch\TelegramBotClient\Bot\Message;
 use Slatch\TelegramBotClient\Transfer\Transfer;
+use Slatch\TelegramBotClient\Bot\Credentials;
 
 ...
-$client = new Client(new Transfer(), new Config('https://api.telegram.org'));
 
-$client->sendMessage($telegramApiToken, new Message($chatId, $text));
-$client->sendMessage($telegramApiToken, new Message($anotherChatId, $anotherText));
+$apiConfig = new Config('https://api.telegram.org');
+$client = new TelegramClient(new Client(), $apiConfig);
+
+$client->sendMessage(new Credentials($telegramApiToken), new Message($chatId, $text));
+$client->sendMessage(new Credentials($telegramApiToken), new Message($anotherChatId, $anotherText));
 ```
 
 Testing:
