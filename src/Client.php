@@ -34,7 +34,7 @@ class Client
             'POST',
             $this->generateUrl($credentials->getToken(), Method::SEND_MESSAGE),
             [
-                'Accept-Language: ru,en-us'
+                'Accept-Language' => 'ru,en-us'
             ],
             $this->buildStream([
                 'chat_id' => $message->getChatId(),
