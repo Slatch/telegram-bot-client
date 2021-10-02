@@ -1,6 +1,6 @@
 <?php
 
-namespace Slatch\TelegramBotClient\Dto;
+namespace Slatch\TelegramBotClient\Bot;
 
 class Message
 {
