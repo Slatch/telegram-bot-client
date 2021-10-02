@@ -21,10 +21,9 @@ class Client
     private $client;
 
     public function __construct(
-        ClientInterface    $client,
+        ClientInterface $client,
         ApiConfigInterface $apiConfig
-    )
-    {
+    ) {
         $this->client = $client;
         $this->apiConfig = $apiConfig;
     }
