@@ -4,7 +4,7 @@ namespace Slatch\TelegramBotClient\Bot;
 
 class Credentials
 {
-    private $token;
+    private string $token;
 
     public function __construct(string $token)
     {

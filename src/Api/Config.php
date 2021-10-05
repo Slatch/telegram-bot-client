@@ -6,7 +6,7 @@ use Slatch\TelegramBotClient\Exceptions\ApiHostValidationException;
 
 class Config implements ApiConfigInterface
 {
-    private $apiHost;
+    private string $apiHost;
 
     /**
      * @throws ApiHostValidationException
