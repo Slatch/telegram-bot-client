@@ -7,10 +7,10 @@ use Slatch\TelegramBotClient\Filters\TypeFilter;
 class AnswerCallbackQuery implements \JsonSerializable
 {
     private string $callbackQueryId;
-    private ?string $text;
-    private ?bool $showAlert;
-    private ?string $url;
-    private ?int $cacheTime;
+    private ?string $text = null;
+    private ?bool $showAlert = null;
+    private ?string $url = null;
+    private ?int $cacheTime = null;
 
     public function jsonSerialize(): array
     {

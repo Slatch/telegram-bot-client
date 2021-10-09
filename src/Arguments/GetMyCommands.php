@@ -7,8 +7,8 @@ use Slatch\TelegramBotClient\Filters\TypeFilter;
 
 class GetMyCommands implements \JsonSerializable
 {
-    private ?BotCommandScope $scope;
-    private ?string $languageCode;
+    private ?BotCommandScope $scope = null;
+    private ?string $languageCode = null;
 
     public function jsonSerialize(): array
     {

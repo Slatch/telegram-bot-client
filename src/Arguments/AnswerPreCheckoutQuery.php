@@ -8,7 +8,7 @@ class AnswerPreCheckoutQuery implements \JsonSerializable
 {
     private string $preCheckoutQueryId;
     private bool $ok;
-    private ?string $errorMessage;
+    private ?string $errorMessage = null;
 
     public function jsonSerialize(): array
     {

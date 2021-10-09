@@ -10,11 +10,11 @@ class AnswerInline implements \JsonSerializable
     private string $inlineQueryId;
     /** @var InlineQueryResult[] */
     private array $results;
-    private ?int $cacheTime;
-    private ?bool $isPersonal;
-    private ?string $nextOffset;
-    private ?string $switchPmText;
-    private ?string $switchPmParameter;
+    private ?int $cacheTime = null;
+    private ?bool $isPersonal = null;
+    private ?string $nextOffset = null;
+    private ?string $switchPmText = null;
+    private ?string $switchPmParameter = null;
 
     public function jsonSerialize(): array
     {

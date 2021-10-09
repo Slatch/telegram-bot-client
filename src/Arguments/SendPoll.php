@@ -16,22 +16,22 @@ class SendPoll implements \JsonSerializable
     private string $question;
     /** @var string[] */
     private array $options;
-    private ?bool $isAnonymous;
-    private ?string $type;
-    private ?bool $allowsMultipleAnswers;
-    private ?int $correctOptionId;
-    private ?string $explanation;
-    private ?string $explanationParseMode;
+    private ?bool $isAnonymous = null;
+    private ?string $type = null;
+    private ?bool $allowsMultipleAnswers = null;
+    private ?int $correctOptionId = null;
+    private ?string $explanation = null;
+    private ?string $explanationParseMode = null;
     /** @var MessageEntity[]|null */
-    private ?array $explanationEntities;
-    private ?int $openPeriod;
-    private ?int $closeDate;
-    private ?bool $isClosed;
-    private ?bool $disableNotification;
-    private ?int $replyToMessageId;
-    private ?bool $allowSendingWithoutReply;
+    private ?array $explanationEntities = null;
+    private ?int $openPeriod = null;
+    private ?int $closeDate = null;
+    private ?bool $isClosed = null;
+    private ?bool $disableNotification = null;
+    private ?int $replyToMessageId = null;
+    private ?bool $allowSendingWithoutReply = null;
     /** @var InlineKeyboardMarkup|ReplyKeyboardMarkup|ReplyKeyboardRemove|ForceReply|null  */
-    private $replyMarkup;
+    private $replyMarkup = null;
 
     public function jsonSerialize(): array
     {

@@ -17,17 +17,17 @@ class SendDocument implements \JsonSerializable
     /** @var InputFile|string */
     private $document;
     /** @var InputFile|string|null */
-    private $thumb;
-    private ?string $caption;
-    private ?string $parseMode;
+    private $thumb = null;
+    private ?string $caption = null;
+    private ?string $parseMode = null;
     /** @var ?MessageEntity[] */
-    private ?array $captionEntities;
-    private ?bool $disableContentTypeDetection;
-    private ?bool $disableNotification;
-    private ?int $replyToMessageId;
-    private ?bool $allowSendingWithoutReply;
+    private ?array $captionEntities = null;
+    private ?bool $disableContentTypeDetection = null;
+    private ?bool $disableNotification = null;
+    private ?int $replyToMessageId = null;
+    private ?bool $allowSendingWithoutReply = null;
     /** @var InlineKeyboardMarkup|ReplyKeyboardMarkup|ReplyKeyboardRemove|ForceReply|null  */
-    private $replyMarkup;
+    private $replyMarkup = null;
 
     public function jsonSerialize(): array
     {
@@ -64,7 +64,7 @@ class SendDocument implements \JsonSerializable
     }
 
     /**
-     * @param InputFile|string|null $thumb
+     * @param InputFile|string $thumb
      */
     public function setThumb($thumb): void
     {

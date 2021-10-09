@@ -16,15 +16,15 @@ class SendVenue implements \JsonSerializable
     private float $longitude;
     private string $title;
     private string $address;
-    private ?string $foursquareId;
-    private ?string $foursquareType;
-    private ?string $googlePlaceId;
-    private ?string $googlePlaceType;
-    private ?bool $disableNotification;
-    private ?int $replyToMessageId;
-    private ?bool $allowSendingWithoutReply;
+    private ?string $foursquareId = null;
+    private ?string $foursquareType = null;
+    private ?string $googlePlaceId = null;
+    private ?string $googlePlaceType = null;
+    private ?bool $disableNotification = null;
+    private ?int $replyToMessageId = null;
+    private ?bool $allowSendingWithoutReply = null;
     /** @var InlineKeyboardMarkup|ReplyKeyboardMarkup|ReplyKeyboardRemove|ForceReply|null  */
-    private $replyMarkup;
+    private $replyMarkup = null;
 
     public function jsonSerialize(): array
     {

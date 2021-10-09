@@ -9,11 +9,11 @@ use Slatch\TelegramBotClient\Filters\TypeFilter;
 class EditMessageMedia implements \JsonSerializable
 {
     /** @var int|string|null */
-    private $chatId;
-    private ?int $messageId;
-    private ?int $inlineMessageId;
+    private $chatId = null;
+    private ?int $messageId = null;
+    private ?int $inlineMessageId = null;
     private InputMedia $media;
-    private ?InlineKeyboardMarkup $replyMarkup;
+    private ?InlineKeyboardMarkup $replyMarkup = null;
 
     public function jsonSerialize(): array
     {

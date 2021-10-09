@@ -14,13 +14,13 @@ class SendContact implements \JsonSerializable
     private $chatId;
     private string $phoneNumber;
     private string $firstName;
-    private ?string $lastName;
-    private ?string $vcard;
-    private ?bool $disableNotification;
-    private ?int $replyToMessageId;
-    private ?bool $allowSendingWithoutReply;
+    private ?string $lastName = null;
+    private ?string $vcard = null;
+    private ?bool $disableNotification = null;
+    private ?int $replyToMessageId = null;
+    private ?bool $allowSendingWithoutReply = null;
     /** @var InlineKeyboardMarkup|ReplyKeyboardMarkup|ReplyKeyboardRemove|ForceReply|null  */
-    private $replyMarkup;
+    private $replyMarkup = null;
 
     public function jsonSerialize(): array
     {

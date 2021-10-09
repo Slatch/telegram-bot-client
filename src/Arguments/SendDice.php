@@ -12,12 +12,12 @@ class SendDice implements \JsonSerializable
 {
     /** @var int|string */
     private $chatId;
-    private ?string $emoji;
-    private ?bool $disableNotification;
-    private ?int $replyToMessageId;
-    private ?bool $allowSendingWithoutReply;
+    private ?string $emoji = null;
+    private ?bool $disableNotification = null;
+    private ?int $replyToMessageId = null;
+    private ?bool $allowSendingWithoutReply = null;
     /** @var InlineKeyboardMarkup|ReplyKeyboardMarkup|ReplyKeyboardRemove|ForceReply|null  */
-    private $replyMarkup;
+    private $replyMarkup = null;
 
     public function jsonSerialize(): array
     {

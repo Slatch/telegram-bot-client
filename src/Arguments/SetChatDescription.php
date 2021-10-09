@@ -8,7 +8,7 @@ class SetChatDescription implements \JsonSerializable
 {
     /** @var int|string */
     private $chatId;
-    private ?string $description;
+    private ?string $description = null;
 
     public function jsonSerialize(): array
     {

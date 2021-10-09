@@ -4,7 +4,7 @@ namespace Slatch\TelegramBotClient\Arguments;
 
 class DeleteMessage implements \JsonSerializable
 {
-    /** @var int|string|null */
+    /** @var int|string */
     private $chatId;
     private int $messageId;
 

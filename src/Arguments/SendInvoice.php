@@ -17,26 +17,26 @@ class SendInvoice implements \JsonSerializable
     private string $currency;
     /** @var LabeledPrice[] */
     private array $prices;
-    private ?int $maxTipAmount;
+    private ?int $maxTipAmount = null;
     /** @var int[]|null */
-    private ?array $suggestedTipAmounts;
-    private ?string $startParameter;
-    private ?string $providerData;
-    private ?string $photoUrl;
-    private ?int $photoSize;
-    private ?int $photoWidth;
-    private ?int $photoHeight;
-    private ?bool $needName;
-    private ?bool $needPhoneNumber;
-    private ?bool $needEmail;
-    private ?bool $needShippingAddress;
-    private ?bool $sendPhoneNumberToProvider;
-    private ?bool $sendEmailToProvider;
-    private ?bool $isFlexible;
-    private ?bool $disableNotification;
-    private ?int $replyToMessageId;
-    private ?bool $allowSendingWithoutReply;
-    private ?InlineKeyboardMarkup $replyMarkup;
+    private ?array $suggestedTipAmounts = null;
+    private ?string $startParameter = null;
+    private ?string $providerData = null;
+    private ?string $photoUrl = null;
+    private ?int $photoSize = null;
+    private ?int $photoWidth = null;
+    private ?int $photoHeight = null;
+    private ?bool $needName = null;
+    private ?bool $needPhoneNumber = null;
+    private ?bool $needEmail = null;
+    private ?bool $needShippingAddress = null;
+    private ?bool $sendPhoneNumberToProvider = null;
+    private ?bool $sendEmailToProvider = null;
+    private ?bool $isFlexible = null;
+    private ?bool $disableNotification = null;
+    private ?int $replyToMessageId = null;
+    private ?bool $allowSendingWithoutReply = null;
+    private ?InlineKeyboardMarkup $replyMarkup = null;
 
     public function jsonSerialize(): array
     {
@@ -118,7 +118,7 @@ class SendInvoice implements \JsonSerializable
     }
 
     /**
-     * @param int[]|null $suggestedTipAmounts
+     * @param int[] $suggestedTipAmounts
      */
     public function setSuggestedTipAmounts(array $suggestedTipAmounts): void
     {

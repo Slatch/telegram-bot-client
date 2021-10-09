@@ -8,10 +8,10 @@ use Slatch\TelegramBotClient\Filters\TypeFilter;
 class EditMessageReplyMarkup implements \JsonSerializable
 {
     /** @var int|string|null */
-    private $chatId;
-    private ?int $messageId;
-    private ?int $inlineMessageId;
-    private ?InlineKeyboardMarkup $replyMarkup;
+    private $chatId = null;
+    private ?int $messageId = null;
+    private ?int $inlineMessageId = null;
+    private ?InlineKeyboardMarkup $replyMarkup = null;
 
     public function jsonSerialize(): array
     {

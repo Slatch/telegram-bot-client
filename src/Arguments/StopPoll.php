@@ -7,10 +7,10 @@ use Slatch\TelegramBotClient\Filters\TypeFilter;
 
 class StopPoll implements \JsonSerializable
 {
-    /** @var int|string|null */
+    /** @var int|string */
     private $chatId;
     private int $messageId;
-    private ?InlineKeyboardMarkup $replyMarkup;
+    private ?InlineKeyboardMarkup $replyMarkup = null;
 
     public function jsonSerialize(): array
     {

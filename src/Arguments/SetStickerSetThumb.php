@@ -10,7 +10,7 @@ class SetStickerSetThumb implements \JsonSerializable
     private string $name;
     private int $userId;
     /** @var InputFile|string|null */
-    private $thumb;
+    private $thumb = null;
 
     public function jsonSerialize(): array
     {

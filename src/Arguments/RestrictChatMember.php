@@ -11,7 +11,7 @@ class RestrictChatMember implements \JsonSerializable
     private $chatId;
     private int $userId;
     private ChatPermissions $permissions;
-    private ?int $untilDate;
+    private ?int $untilDate = null;
 
     public function jsonSerialize(): array
     {

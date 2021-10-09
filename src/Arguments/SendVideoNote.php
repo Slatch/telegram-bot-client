@@ -15,15 +15,15 @@ class SendVideoNote implements \JsonSerializable
     private $chatId;
     /** @var InputFile|string */
     private $videoNote;
-    private ?int $duration;
-    private ?int $length;
+    private ?int $duration = null;
+    private ?int $length = null;
     /** @var InputFile|string|null */
-    private $thumb;
-    private ?bool $disableNotification;
-    private ?int $replyToMessageId;
-    private ?bool $allowSendingWithoutReply;
+    private $thumb = null;
+    private ?bool $disableNotification = null;
+    private ?int $replyToMessageId = null;
+    private ?bool $allowSendingWithoutReply = null;
     /** @var InlineKeyboardMarkup|ReplyKeyboardMarkup|ReplyKeyboardRemove|ForceReply|null  */
-    private $replyMarkup;
+    private $replyMarkup = null;
 
     public function jsonSerialize(): array
     {
@@ -68,7 +68,7 @@ class SendVideoNote implements \JsonSerializable
     }
 
     /**
-     * @param InputFile|string|null $thumb
+     * @param InputFile|string $thumb
      */
     public function setThumb($thumb): void
     {

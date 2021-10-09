@@ -10,8 +10,8 @@ class AnswerShippingQuery implements \JsonSerializable
     private string $shippingQueryId;
     private bool $ok;
     /** @var ?ShippingOption[] */
-    private ?array $shippingOptions;
-    private ?string $errorMessage;
+    private ?array $shippingOptions = null;
+    private ?string $errorMessage = null;
 
     public function jsonSerialize(): array
     {

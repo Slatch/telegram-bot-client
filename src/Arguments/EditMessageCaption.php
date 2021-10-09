@@ -9,15 +9,15 @@ use Slatch\TelegramBotClient\Filters\TypeFilter;
 class EditMessageCaption implements \JsonSerializable
 {
     /** @var int|string|null */
-    private $chatId;
-    private ?int $messageId;
-    private ?int $inlineMessageId;
-    private ?string $caption;
-    private ?string $parseMode;
+    private $chatId = null;
+    private ?int $messageId = null;
+    private ?int $inlineMessageId = null;
+    private ?string $caption = null;
+    private ?string $parseMode = null;
     /** @var ?MessageEntity[] */
-    private ?array $captionEntities;
-    private ?bool $disableWebPagePreview;
-    private ?InlineKeyboardMarkup $replyMarkup;
+    private ?array $captionEntities = null;
+    private ?bool $disableWebPagePreview = null;
+    private ?InlineKeyboardMarkup $replyMarkup = null;
 
     public function jsonSerialize(): array
     {

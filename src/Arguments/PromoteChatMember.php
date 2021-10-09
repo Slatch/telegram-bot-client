@@ -9,17 +9,17 @@ class PromoteChatMember implements \JsonSerializable
     /** @var int|string */
     private $chatId;
     private int $userId;
-    private ?bool $isAnonymous;
-    private ?bool $canManageChat;
-    private ?bool $canPostMessages;
-    private ?bool $canEditMessages;
-    private ?bool $canDeleteMessages;
-    private ?bool $canManageVoiceChats;
-    private ?bool $canRestrictMembers;
-    private ?bool $canPromoteMembers;
-    private ?bool $canChangeInfo;
-    private ?bool $canInviteUsers;
-    private ?bool $canPinMessages;
+    private ?bool $isAnonymous = null;
+    private ?bool $canManageChat = null;
+    private ?bool $canPostMessages = null;
+    private ?bool $canEditMessages = null;
+    private ?bool $canDeleteMessages = null;
+    private ?bool $canManageVoiceChats = null;
+    private ?bool $canRestrictMembers = null;
+    private ?bool $canPromoteMembers = null;
+    private ?bool $canChangeInfo = null;
+    private ?bool $canInviteUsers = null;
+    private ?bool $canPinMessages = null;
 
     public function jsonSerialize(): array
     {

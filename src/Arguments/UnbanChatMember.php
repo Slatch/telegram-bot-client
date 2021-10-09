@@ -9,7 +9,7 @@ class UnbanChatMember implements \JsonSerializable
     /** @var int|string */
     private $chatId;
     private int $userId;
-    private ?bool $onlyIfBanned;
+    private ?bool $onlyIfBanned = null;
 
     public function jsonSerialize(): array
     {

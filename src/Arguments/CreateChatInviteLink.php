@@ -8,8 +8,8 @@ class CreateChatInviteLink implements \JsonSerializable
 {
     /** @var int|string */
     private $chatId;
-    private ?int $expireDate;
-    private ?int $memberLimit;
+    private ?int $expireDate = null;
+    private ?int $memberLimit = null;
 
     public function jsonSerialize(): array
     {

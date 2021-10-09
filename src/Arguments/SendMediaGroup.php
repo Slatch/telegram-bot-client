@@ -11,9 +11,9 @@ class SendMediaGroup implements \JsonSerializable
     private $chatId;
     /** @var InputMediaAudio|InputMediaDocumeny|InputMediaPhoto|InputMediaVideo */
     private $media;
-    private ?bool $disableNotification;
-    private ?int $replyToMessageId;
-    private ?bool $allowSendingWithoutReply;
+    private ?bool $disableNotification = null;
+    private ?int $replyToMessageId = null;
+    private ?bool $allowSendingWithoutReply = null;
 
     public function jsonSerialize(): array
     {

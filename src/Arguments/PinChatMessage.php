@@ -9,7 +9,7 @@ class PinChatMessage implements \JsonSerializable
     /** @var int|string */
     private $chatId;
     private int $messageId;
-    private ?bool $disableNotification;
+    private ?bool $disableNotification = null;
 
     public function jsonSerialize(): array
     {

@@ -8,10 +8,10 @@ use Slatch\TelegramBotClient\Filters\TypeFilter;
 class StopMessageLiveLocation implements \JsonSerializable
 {
     /** @var null|int|string */
-    private $chatId;
-    private ?int $messageId;
-    private ?string $inlineMessageId;
-    private ?InlineKeyboardMarkup $replyMarkup;
+    private $chatId = null;
+    private ?int $messageId = null;
+    private ?string $inlineMessageId = null;
+    private ?InlineKeyboardMarkup $replyMarkup = null;
 
     public function jsonSerialize(): array
     {

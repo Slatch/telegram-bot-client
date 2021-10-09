@@ -16,16 +16,16 @@ class SendVoice implements \JsonSerializable
     private $chatId;
     /** @var InputFile|string */
     private $voice;
-    private ?string $caption;
-    private ?string $parseMode;
+    private ?string $caption = null;
+    private ?string $parseMode = null;
     /** @var ?MessageEntity[] */
-    private ?array $captionEntities;
-    private ?int $duration;
-    private ?bool $disableNotification;
-    private ?int $replyToMessageId;
-    private ?bool $allowSendingWithoutReply;
+    private ?array $captionEntities = null;
+    private ?int $duration = null;
+    private ?bool $disableNotification = null;
+    private ?int $replyToMessageId = null;
+    private ?bool $allowSendingWithoutReply = null;
     /** @var InlineKeyboardMarkup|ReplyKeyboardMarkup|ReplyKeyboardRemove|ForceReply|null  */
-    private $replyMarkup;
+    private $replyMarkup = null;
 
     public function jsonSerialize(): array
     {

@@ -16,20 +16,20 @@ class SendAudio implements \JsonSerializable
     private $chatId;
     /** @var InputFile|string */
     private $audio;
-    private ?string $caption;
-    private ?string $parseMode;
+    private ?string $caption = null;
+    private ?string $parseMode = null;
     /** @var ?MessageEntity[] */
-    private ?array $captionEntities;
-    private ?int $duration;
-    private ?string $performer;
-    private ?string $title;
+    private ?array $captionEntities = null;
+    private ?int $duration = null;
+    private ?string $performer = null;
+    private ?string $title = null;
     /** @var InputFile|string|null */
-    private $thumb;
-    private ?bool $disableNotification;
-    private ?int $replyToMessageId;
-    private ?bool $allowSendingWithoutReply;
+    private $thumb = null;
+    private ?bool $disableNotification = null;
+    private ?int $replyToMessageId = null;
+    private ?bool $allowSendingWithoutReply = null;
     /** @var InlineKeyboardMarkup|ReplyKeyboardMarkup|ReplyKeyboardRemove|ForceReply|null  */
-    private $replyMarkup;
+    private $replyMarkup = null;
 
     public function jsonSerialize(): array
     {
@@ -101,7 +101,7 @@ class SendAudio implements \JsonSerializable
     }
 
     /**
-     * @param InputFile|string|null $thumb
+     * @param InputFile|string $thumb
      */
     public function setThumb($thumb): void
     {

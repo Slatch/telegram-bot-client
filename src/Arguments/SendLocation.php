@@ -14,15 +14,15 @@ class SendLocation implements \JsonSerializable
     private $chatId;
     private float $latitude;
     private float $longitude;
-    private ?float $horizontalAccuracy;
-    private ?int $livePeriod;
-    private ?int $heading;
-    private ?int $proximityAlertRadius;
-    private ?bool $disableNotification;
-    private ?int $replyToMessageId;
-    private ?bool $allowSendingWithoutReply;
+    private ?float $horizontalAccuracy = null;
+    private ?int $livePeriod = null;
+    private ?int $heading = null;
+    private ?int $proximityAlertRadius = null;
+    private ?bool $disableNotification = null;
+    private ?int $replyToMessageId = null;
+    private ?bool $allowSendingWithoutReply = null;
     /** @var InlineKeyboardMarkup|ReplyKeyboardMarkup|ReplyKeyboardRemove|ForceReply|null  */
-    private $replyMarkup;
+    private $replyMarkup = null;
 
     public function jsonSerialize(): array
     {

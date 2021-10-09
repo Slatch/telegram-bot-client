@@ -9,8 +9,8 @@ class BanChatMember implements \JsonSerializable
     /** @var int|string */
     private $chatId;
     private int $userId;
-    private ?int $untilDate;
-    private ?bool $revokeMessages;
+    private ?int $untilDate = null;
+    private ?bool $revokeMessages = null;
 
     public function jsonSerialize(): array
     {

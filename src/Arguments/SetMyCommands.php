@@ -10,8 +10,8 @@ class SetMyCommands implements \JsonSerializable
 {
     /** @var BotCommand[] */
     private array $commands;
-    private ?BotCommandScope $scope;
-    private ?string $languageCode;
+    private ?BotCommandScope $scope = null;
+    private ?string $languageCode = null;
 
     public function jsonSerialize(): array
     {

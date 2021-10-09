@@ -8,7 +8,7 @@ class UnpinChatMessage implements \JsonSerializable
 {
     /** @var int|string */
     private $chatId;
-    private ?int $messageId;
+    private ?int $messageId = null;
 
     public function jsonSerialize(): array
     {

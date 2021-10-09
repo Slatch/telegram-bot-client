@@ -12,11 +12,11 @@ class CreateNewStickerSet implements \JsonSerializable
     private string $name;
     private string $title;
     /** @var InputFile|string|null */
-    private $pngSticker;
-    private ?InputFile $tgsSticker;
+    private $pngSticker = null;
+    private ?InputFile $tgsSticker = null;
     private string $emojis;
-    private ?bool $containsMasks;
-    private ?MaskPosition $maskPosition;
+    private ?bool $containsMasks = null;
+    private ?MaskPosition $maskPosition = null;
 
     public function jsonSerialize(): array
     {

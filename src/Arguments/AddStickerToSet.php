@@ -11,10 +11,10 @@ class AddStickerToSet implements \JsonSerializable
     private int $userId;
     private string $name;
     /** @var InputFile|string|null */
-    private $pngSticker;
-    private ?InputFile $tgsSticker;
+    private $pngSticker = null;
+    private ?InputFile $tgsSticker = null;
     private string $emojis;
-    private ?MaskPosition $maskPosition;
+    private ?MaskPosition $maskPosition = null;
 
     public function jsonSerialize(): array
     {

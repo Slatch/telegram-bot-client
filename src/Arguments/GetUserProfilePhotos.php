@@ -5,8 +5,8 @@ namespace Slatch\TelegramBotClient\Arguments;
 class GetUserProfilePhotos implements \JsonSerializable
 {
     private int $userId;
-    private ?int $offset;
-    private ?int $limit;
+    private ?int $offset = null;
+    private ?int $limit = null;
 
     public function jsonSerialize(): array
     {
