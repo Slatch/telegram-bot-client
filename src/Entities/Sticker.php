@@ -32,7 +32,7 @@ class Sticker extends BaseEntity
         $this->fileSize = $payload['file_size'] ?? null;
     }
 
-    public function getFileId(): ?string
+    public function getFileId(): string
     {
         return $this->fileId;
     }

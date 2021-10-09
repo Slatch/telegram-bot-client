@@ -2,6 +2,8 @@
 
 namespace Slatch\TelegramBotClient\Exceptions;
 
-abstract class BaseException extends \Exception
+use Exception;
+
+abstract class BaseException extends Exception
 {
 }

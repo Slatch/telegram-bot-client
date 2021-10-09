@@ -2,6 +2,8 @@
 
 namespace Slatch\TelegramBotClient\Methods;
 
+use Psr\Http\Message\StreamInterface;
+
 abstract class BaseMethod
 {
     /** @var string */
@@ -10,5 +12,10 @@ abstract class BaseMethod
     public function getMethod(): string
     {
         return static::METHOD_URL;
+    }
+
+    public function parseResponse(StreamInterface $stream)
+    {
+        return json_decode($stream->getContents(), true)['result'];
     }
 }
