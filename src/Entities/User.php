@@ -4,9 +4,6 @@ namespace Slatch\TelegramBotClient\Entities;
 
 use Slatch\TelegramBotClient\Filters\TypeFilter;
 
-/**
- * @internal
- */
 class User extends BaseEntity implements \JsonSerializable
 {
     private int $id;

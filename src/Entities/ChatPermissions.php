@@ -2,9 +2,6 @@
 
 namespace Slatch\TelegramBotClient\Entities;
 
-/**
- * @internal
- */
 class ChatPermissions extends BaseEntity
 {
     private bool $canSendMessages;

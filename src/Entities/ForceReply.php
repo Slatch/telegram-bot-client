@@ -2,9 +2,6 @@
 
 namespace Slatch\TelegramBotClient\Entities;
 
-/**
- * @internal
- */
 class ForceReply extends BaseEntity
 {
     private bool $forceReply;

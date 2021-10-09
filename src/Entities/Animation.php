@@ -2,9 +2,6 @@
 
 namespace Slatch\TelegramBotClient\Entities;
 
-/**
- * @internal
- */
 class Animation extends BaseEntity
 {
     private string $fileId;
@@ -24,7 +21,7 @@ class Animation extends BaseEntity
         $this->width = $payload['width'];
         $this->height = $payload['height'];
         $this->duration = $payload['duration'];
-        $this->thumb = $payload['thumb'] ? new PhotoSize($payload['thumb']) : null;
+        $this->thumb = isset($payload['thumb']) ? new PhotoSize($payload['thumb']) : null;
         $this->fileName = $payload['file_name'] ?? null;
         $this->mimeType = $payload['mime_type'] ?? null;
         $this->fileSize = $payload['file_size'] ?? null;

@@ -2,9 +2,6 @@
 
 namespace Slatch\TelegramBotClient\Entities;
 
-/**
- * @internal
- */
 class EncryptedCredentials extends BaseEntity
 {
     private string $data;

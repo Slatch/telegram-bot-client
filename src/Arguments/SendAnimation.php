@@ -4,38 +4,46 @@ namespace Slatch\TelegramBotClient\Arguments;
 
 use Slatch\TelegramBotClient\Entities\ForceReply;
 use Slatch\TelegramBotClient\Entities\InlineKeyboardMarkup;
+use Slatch\TelegramBotClient\Entities\InputFile;
 use Slatch\TelegramBotClient\Entities\MessageEntity;
 use Slatch\TelegramBotClient\Entities\ReplyKeyboardMarkup;
 use Slatch\TelegramBotClient\Entities\ReplyKeyboardRemove;
 use Slatch\TelegramBotClient\Filters\TypeFilter;
 
-class SendMessageArgument implements \JsonSerializable
+class SendAnimation implements \JsonSerializable
 {
     /** @var int|string */
     private $chatId;
-    private string $text;
-    private ?string $parseMode = null;
+    /** @var InputFile|string */
+    private $animation;
+    private ?int $duration;
+    private ?int $width;
+    private ?int $height;
+    /** @var InputFile|string|null */
+    private $thumb;
+    private ?string $caption;
+    private ?string $parseMode;
     /** @var ?MessageEntity[] */
-    private ?array $entities = null;
-    private ?bool $disableWebPagePreview = null;
-    private ?bool $disableNotification = null;
-    private ?int $replyToMessageId = null;
-    private ?bool $allowSendingWithoutReply = null;
-    /** @var null|InlineKeyboardMarkup|ReplyKeyboardMarkup|ReplyKeyboardRemove|ForceReply */
-    private $replyMarkup = null;
+    private ?array $captionEntities;
+    private ?bool $disableNotification;
+    private ?int $replyToMessageId;
+    private ?bool $allowSendingWithoutReply;
+    /** @var InlineKeyboardMarkup|ReplyKeyboardMarkup|ReplyKeyboardRemove|ForceReply|null  */
+    private $replyMarkup;
 
-    /**
-     * @internal
-     */
     public function jsonSerialize(): array
     {
         return [
                 'chat_id' => $this->chatId,
-                'text' => $this->text,
+                'animation' => $this->animation,
             ] + TypeFilter::nullable([
+                'caption' => $this->caption,
                 'parse_mode' => $this->parseMode,
-                'entities' => $this->entities,
-                'disable_web_page_preview' => $this->disableWebPagePreview,
+                'duration' => $this->duration,
+                'width' => $this->width,
+                'height' => $this->height,
+                'thumb' => $this->thumb,
+                'caption_entities' => $this->captionEntities,
                 'disable_notification' => $this->disableNotification,
                 'reply_to_message_id' => $this->replyToMessageId,
                 'allow_sending_without_reply' => $this->allowSendingWithoutReply,
@@ -51,9 +59,17 @@ class SendMessageArgument implements \JsonSerializable
         $this->chatId = $chatId;
     }
 
-    public function setText(string $text): void
+    /**
+     * @param InputFile|string $animation
+     */
+    public function setAnimation($animation): void
     {
-        $this->text = $text;
+        $this->animation = $animation;
+    }
+
+    public function setCaption(string $caption): void
+    {
+        $this->caption = $caption;
     }
 
     public function setParseMode(string $parseMode): void
@@ -61,14 +77,35 @@ class SendMessageArgument implements \JsonSerializable
         $this->parseMode = $parseMode;
     }
 
-    public function setEntities(array $entities): void
+    /**
+     * @param MessageEntity[] $captionEntities
+     */
+    public function setCaptionEntities(array $captionEntities): void
     {
-        $this->entities = $entities;
+        $this->captionEntities = $captionEntities;
     }
 
-    public function setDisableWebPagePreview(bool $disableWebPagePreview): void
+    public function setDuration(int $duration): void
     {
-        $this->disableWebPagePreview = $disableWebPagePreview;
+        $this->duration = $duration;
+    }
+
+    public function setWidth(int $width): void
+    {
+        $this->width = $width;
+    }
+
+    public function setHeight(int $height): void
+    {
+        $this->height = $height;
+    }
+
+    /**
+     * @param InputFile|string|null $thumb
+     */
+    public function setThumb($thumb): void
+    {
+        $this->thumb = $thumb;
     }
 
     public function setDisableNotification(bool $disableNotification): void

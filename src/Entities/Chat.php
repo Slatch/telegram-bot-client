@@ -4,9 +4,6 @@ namespace Slatch\TelegramBotClient\Entities;
 
 use Slatch\TelegramBotClient\Enums\ChatType;
 
-/**
- * @internal
- */
 class Chat extends BaseEntity
 {
     private int $id;
@@ -37,18 +34,18 @@ class Chat extends BaseEntity
         $this->username = $payload['username'] ?? null;
         $this->firstName = $payload['first_name'] ?? null;
         $this->lastName = $payload['last_name'] ?? null;
-        $this->photo = $payload['photo'] ? new ChatPhoto($payload['photo']) : null;
+        $this->photo = isset($payload['photo']) ? new ChatPhoto($payload['photo']) : null;
         $this->bio = $payload['bio'] ?? null;
         $this->description = $payload['description'] ?? null;
         $this->inviteLink = $payload['inviteLink'] ?? null;
-        $this->pinnedMessage = $payload['pinned_message'] ? new Message($payload['pinned_message']) : null;
-        $this->permissions = $payload['permissions'] ? new ChatPermissions($payload['permissions']) : null;
+        $this->pinnedMessage = isset($payload['pinned_message']) ? new Message($payload['pinned_message']) : null;
+        $this->permissions = isset($payload['permissions']) ? new ChatPermissions($payload['permissions']) : null;
         $this->slowModeDelay = $payload['slow_mode_delay'] ?? null;
         $this->messageAutoDeleteTime = $payload['message_auto_delete_time'] ?? null;
         $this->stickerSetName = $payload['sticker_set_name'] ?? null;
         $this->canSetStickerSet = $payload['can_set_sticker_set'] ?? null;
         $this->linkedChatId = $payload['linked_chat_id'] ?? null;
-        $this->location = $payload['location'] ? new ChatLocation($payload['location']) : null;
+        $this->location = isset($payload['location']) ? new ChatLocation($payload['location']) : null;
     }
 
     public function getId(): int

@@ -2,9 +2,6 @@
 
 namespace Slatch\TelegramBotClient\Entities;
 
-/**
- * @internal
- */
 class Document extends BaseEntity
 {
     private string $fileId;
@@ -18,7 +15,7 @@ class Document extends BaseEntity
     {
         $this->fileId = $payload['file_id'];
         $this->fileUniqueId = $payload['file_unique_id'];
-        $this->thumb = $payload['thumb'] ? new PhotoSize($payload['thumb']) : null;
+        $this->thumb = isset($payload['thumb']) ? new PhotoSize($payload['thumb']) : null;
         $this->fileName = $payload['file_name'] ?? null;
         $this->mimeType = $payload['mime_type'] ?? null;
         $this->fileSize = $payload['file_size'] ?? null;

@@ -2,9 +2,6 @@
 
 namespace Slatch\TelegramBotClient\Entities;
 
-/**
- * @internal
- */
 class PhotoSize extends BaseEntity
 {
     private string $fileId;

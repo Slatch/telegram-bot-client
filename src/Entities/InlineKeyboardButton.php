@@ -2,9 +2,6 @@
 
 namespace Slatch\TelegramBotClient\Entities;
 
-/**
- * @internal
- */
 class InlineKeyboardButton extends BaseEntity
 {
     private string $text;
@@ -20,11 +17,11 @@ class InlineKeyboardButton extends BaseEntity
     {
         $this->text = $payload['text'];
         $this->url = $payload['url'] ?? null;
-        $this->loginUrl = $payload['login_url'] ? new LoginUrl($payload['login_url']) : null;
+        $this->loginUrl = isset($payload['login_url']) ? new LoginUrl($payload['login_url']) : null;
         $this->callbackData = $payload['callback_data'] ?? null;
         $this->switchInlineQuery = $payload['switch_inline_query'] ?? null;
         $this->switchInlineQueryCurrentChat = $payload['switch_inline_query_current_chat'] ?? null;
-        $this->callbackGame = $payload['callback_game'] ? new CallbackGame($payload['callback_game']) : null;
+        $this->callbackGame = isset($payload['callback_game']) ? new CallbackGame($payload['callback_game']) : null;
         $this->pay = $payload['pay'] ?? null;
     }
 

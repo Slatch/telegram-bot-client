@@ -2,9 +2,6 @@
 
 namespace Slatch\TelegramBotClient\Entities;
 
-/**
- * @internal
- */
 class VideoNote extends BaseEntity
 {
     private string $fileId;
@@ -20,7 +17,7 @@ class VideoNote extends BaseEntity
         $this->fileUniqueId = $payload['file_unique_id'];
         $this->length = $payload['length'];
         $this->duration = $payload['duration'];
-        $this->thumb = $payload['thumb'] ? new PhotoSize($payload['thumb']) : null;
+        $this->thumb = isset($payload['thumb']) ? new PhotoSize($payload['thumb']) : null;
         $this->fileSize = $payload['file_size'] ?? null;
     }
 

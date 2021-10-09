@@ -2,9 +2,6 @@
 
 namespace Slatch\TelegramBotClient\Entities;
 
-/**
- * @internal
- */
 class Sticker extends BaseEntity
 {
     private string $fileId;
@@ -25,14 +22,14 @@ class Sticker extends BaseEntity
         $this->width = $payload['width'];
         $this->height = $payload['height'];
         $this->isAnimated = $payload['is_animated'];
-        $this->thumb = $payload['thumb'] ? new PhotoSize($payload['thumb']) : null;
+        $this->thumb = isset($payload['thumb']) ? new PhotoSize($payload['thumb']) : null;
         $this->emoji = $payload['emoji'] ?? null;
         $this->setName = $payload['set_name'] ?? null;
-        $this->maskPosition = $payload['mask_position'] ? new MaskPosition($payload['mask_position']) : null;
+        $this->maskPosition = isset($payload['mask_position']) ? new MaskPosition($payload['mask_position']) : null;
         $this->fileSize = $payload['file_size'] ?? null;
     }
 
-    public function getFileId(): ?string
+    public function getFileId(): string
     {
         return $this->fileId;
     }

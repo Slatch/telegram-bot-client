@@ -2,9 +2,6 @@
 
 namespace Slatch\TelegramBotClient\Entities;
 
-/**
- * @internal
- */
 class ProximityAlertTriggered extends BaseEntity
 {
     private User $traveler;

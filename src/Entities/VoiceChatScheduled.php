@@ -2,9 +2,6 @@
 
 namespace Slatch\TelegramBotClient\Entities;
 
-/**
- * @internal
- */
 class VoiceChatScheduled extends BaseEntity
 {
     private int $startDate;

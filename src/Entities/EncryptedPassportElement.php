@@ -4,9 +4,6 @@ namespace Slatch\TelegramBotClient\Entities;
 
 use Slatch\TelegramBotClient\Enums\EncryptedPassportElementType;
 
-/**
- * @internal
- */
 class EncryptedPassportElement extends BaseEntity
 {
     /** @see EncryptedPassportElementType */
@@ -31,16 +28,20 @@ class EncryptedPassportElement extends BaseEntity
         $this->phoneNumber = $payload['phone_number'] ?? null;
         $this->email = $payload['email'] ?? null;
 
-        foreach ((array)$payload['files'] as $file) {
-            $this->files[] = new PassportFile($file);
+        if (isset($payload['files'])) {
+            foreach ((array)$payload['files'] as $file) {
+                $this->files[] = new PassportFile($file);
+            }
         }
 
-        $this->frontSide = $payload['front_side'] ? new PassportFile($payload['front_side']) : null;
-        $this->reverseSide = $payload['reverse_side'] ? new PassportFile($payload['reverse_side']) : null;
-        $this->selfie = $payload['selfie'] ? new PassportFile($payload['selfie']) : null;
+        $this->frontSide = isset($payload['front_side']) ? new PassportFile($payload['front_side']) : null;
+        $this->reverseSide = isset($payload['reverse_side']) ? new PassportFile($payload['reverse_side']) : null;
+        $this->selfie = isset($payload['selfie']) ? new PassportFile($payload['selfie']) : null;
 
-        foreach ((array)$payload['translation'] as $translation) {
-            $this->translation[] = new PassportFile($translation);
+        if (isset($payload['translation'])) {
+            foreach ((array)$payload['translation'] as $translation) {
+                $this->translation[] = new PassportFile($translation);
+            }
         }
 
         $this->hash = $payload['hash'];
