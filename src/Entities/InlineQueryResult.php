@@ -15,7 +15,7 @@ abstract class InlineQueryResult extends BaseEntity
     {
         $this->type = $payload['type'];
         $this->id = $payload['id'];
-        $this->replyMarkup = $payload['reply_markup'] ? new InlineKeyboardMarkup($payload['reply_markup']) : null;
+        $this->replyMarkup = isset($payload['reply_markup']) ? new InlineKeyboardMarkup($payload['reply_markup']) : null;
     }
 
     public function getType(): string

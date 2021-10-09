@@ -27,7 +27,7 @@ class Audio extends BaseEntity
         $this->fileName = $payload['file_name'] ?? null;
         $this->mimeType = $payload['mime_type'] ?? null;
         $this->fileSize = $payload['file_size'] ?? null;
-        $this->thumb = $payload['thumb'] ? new PhotoSize($payload['thumb']) : null;
+        $this->thumb = isset($payload['thumb']) ? new PhotoSize($payload['thumb']) : null;
     }
 
     public function getFileId(): string

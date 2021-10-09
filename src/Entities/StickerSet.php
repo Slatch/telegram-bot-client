@@ -24,7 +24,7 @@ class StickerSet extends BaseEntity
         foreach ((array)$payload['stickers'] as $sticker) {
             $this->stickers[] = new Sticker($sticker);
         }
-        $this->thumb = $payload['thumb'] ? new PhotoSize($payload['thumb']) : null;
+        $this->thumb = isset($payload['thumb']) ? new PhotoSize($payload['thumb']) : null;
     }
 
     public function getName(): string

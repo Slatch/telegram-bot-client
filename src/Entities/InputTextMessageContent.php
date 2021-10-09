@@ -20,8 +20,10 @@ class InputTextMessageContent extends InputMessageContent
         $this->messageText = $payload['message_text'];
         $this->parseMode = $payload['parse_mode'] ?? null;
 
-        foreach ((array)$payload['entities'] as $entity) {
-            $this->entities[] = new MessageEntity($entity);
+        if (isset($payload['entities'])) {
+            foreach ((array)$payload['entities'] as $entity) {
+                $this->entities[] = new MessageEntity($entity);
+            }
         }
 
         $this->disableWebPagePreview = $payload['disable_web_page_preview'] ?? null;

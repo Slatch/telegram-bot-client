@@ -12,8 +12,10 @@ class VoiceChatParticipantsInvited extends BaseEntity
 
     public function __construct(array $payload)
     {
-        foreach ((array)$payload['users'] as $user) {
-            $this->users[] = new User($user);
+        if (isset($payload['users'])) {
+            foreach ((array)$payload['users'] as $user) {
+                $this->users[] = new User($user);
+            }
         }
     }
 

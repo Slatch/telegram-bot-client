@@ -28,7 +28,7 @@ class InputMediaAudio extends BaseEntity
         $this->type = $payload['type'];
         $this->media = $payload['media'];
 
-        $this->thumb = $payload['thumb'] ? new InputFile($payload['thumb']) : null; throw new NotImplementedException();
+        $this->thumb = isset($payload['thumb']) ? new InputFile($payload['thumb']) : null; throw new NotImplementedException();
 
         $this->caption = $payload['caption'] ?? null;
         $this->parseMode = $payload['parse_mode'] ?? null;

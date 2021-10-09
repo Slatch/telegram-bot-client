@@ -21,7 +21,7 @@ class SuccessfulPayment extends BaseEntity
         $this->totalAmount = $payload['total_amount'];
         $this->invoicePayload = $payload['invoice_payload'];
         $this->shippingOptionId = $payload['shipping_option_id'] ?? null;
-        $this->orderInfo = $payload['order_info'] ? new OrderInfo($payload['order_info']) : null;
+        $this->orderInfo = isset($payload['order_info']) ? new OrderInfo($payload['order_info']) : null;
         $this->telegramPaymentChargeId = $payload['telegram_payment_charge_id'];
         $this->providerPaymentChargeId = $payload['provider_payment_charge_id'];
     }

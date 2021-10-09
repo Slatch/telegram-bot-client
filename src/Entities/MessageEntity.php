@@ -22,7 +22,7 @@ class MessageEntity extends BaseEntity implements \JsonSerializable
         $this->offset = $payload['offset'];
         $this->length = $payload['length'];
         $this->url = $payload['url'] ?? null;
-        $this->user = $payload['user'] ? new User($payload['user']) : null;
+        $this->user = isset($payload['user']) ? new User($payload['user']) : null;
         $this->language = $payload['language'] ?? null;
     }
 

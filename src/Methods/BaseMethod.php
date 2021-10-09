@@ -3,6 +3,7 @@
 namespace Slatch\TelegramBotClient\Methods;
 
 use Psr\Http\Message\StreamInterface;
+use Slatch\TelegramBotClient\Exceptions\BadRequestException;
 
 abstract class BaseMethod
 {
@@ -16,6 +17,12 @@ abstract class BaseMethod
 
     public function parseResponse(StreamInterface $stream)
     {
-        return json_decode($stream->getContents(), true)['result'];
+        $response = json_decode($stream->getContents(), true);
+
+        if (isset($response['ok']) && $response['ok'] === false) {
+            throw new BadRequestException($response['description'], $response['error_code']);
+        }
+
+        return $response['result'];
     }
 }

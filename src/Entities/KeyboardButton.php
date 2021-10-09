@@ -17,7 +17,7 @@ class KeyboardButton extends BaseEntity
         $this->text = $payload['text'];
         $this->requestContact = $payload['request_contact'] ?? null;
         $this->requestLocation = $payload['request_location'] ?? null;
-        $this->requestPoll = $payload['request_poll'] ? new KeyboardButtonPollType($payload['request_poll']) : null;
+        $this->requestPoll = isset($payload['request_poll']) ? new KeyboardButtonPollType($payload['request_poll']) : null;
     }
 
     public function getText(): string

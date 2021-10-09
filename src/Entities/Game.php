@@ -24,10 +24,12 @@ class Game extends BaseEntity
             $this->photo[] = new PhotoSize($photo);
         }
         $this->text = $payload['text'] ?? null;
-        foreach ((array)$payload['text_entities'] as $textEntity) {
-            $this->textEntities[] = new MessageEntity($textEntity);
+        if (isset($payload['text_entities'])) {
+            foreach ((array)$payload['text_entities'] as $textEntity) {
+                $this->textEntities[] = new MessageEntity($textEntity);
+            }
         }
-        $this->animation = $payload['animation'] ? new Animation($payload['animation']) : null;
+        $this->animation = isset($payload['animation']) ? new Animation($payload['animation']) : null;
     }
 
     public function getTitle(): string

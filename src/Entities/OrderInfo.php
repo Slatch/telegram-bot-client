@@ -17,7 +17,7 @@ class OrderInfo extends BaseEntity
         $this->name = $payload['name'] ?? null;
         $this->phoneNumber = $payload['phone_number'] ?? null;
         $this->email = $payload['email'] ?? null;
-        $this->shippingAddress = $payload['shipping_address'] ? new ShippingAddress($payload['shipping_address']) : null;
+        $this->shippingAddress = isset($payload['shipping_address']) ? new ShippingAddress($payload['shipping_address']) : null;
     }
 
     public function getName(): ?string

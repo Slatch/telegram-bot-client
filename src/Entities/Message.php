@@ -72,61 +72,71 @@ class Message extends BaseEntity
     public function __construct(array $payload)
     {
         $this->messageId = $payload['message_id'];
-        $this->from = $payload['from'] ? new User($payload['from']) : null;
-        $this->senderChat = $payload['sender_chat'] ? new Chat($payload['sender_chat']) : null;
+        $this->from = isset($payload['from']) ? new User($payload['from']) : null;
+        $this->senderChat = isset($payload['sender_chat']) ? new Chat($payload['sender_chat']) : null;
         $this->date = $payload['date'];
         $this->chat = new Chat($payload['chat']);
-        $this->forwardFrom = $payload['forward_from'] ? new User($payload['forward_from']) : null;
-        $this->forwardFromChat = $payload['forward_from_chat'] ? new Chat($payload['forward_from_chat']) : null;
+        $this->forwardFrom = isset($payload['forward_from']) ? new User($payload['forward_from']) : null;
+        $this->forwardFromChat = isset($payload['forward_from_chat']) ? new Chat($payload['forward_from_chat']) : null;
         $this->forwardFromMessageId = $payload['forward_from_message_id'] ?? null;
         $this->forwardSignature = $payload['forward_signature'] ?? null;
         $this->forwardSenderName = $payload['forward_sender_name'] ?? null;
         $this->forwardDate = $payload['forward_date'] ?? null;
-        $this->replyToMessage = $payload['reply_to_message'] ? new Message($payload['reply_to_message']) : null;
-        $this->viaBot = $payload['via_bot'] ? new User($payload['via_bot']) : null;
+        $this->replyToMessage = isset($payload['reply_to_message']) ? new Message($payload['reply_to_message']) : null;
+        $this->viaBot = isset($payload['via_bot']) ? new User($payload['via_bot']) : null;
         $this->editDate = $payload['edit_date'] ?? null;
         $this->mediaGroupId = $payload['media_group_id'] ?? null;
         $this->authorSignature = $payload['author_signature'] ?? null;
         $this->text = $payload['text'] ?? null;
 
-        foreach ((array)$payload['entities'] as $entity) {
-            $this->entities[] = new MessageEntity($entity);
+        if (isset($payload['entities'])) {
+            foreach ((array)$payload['entities'] as $entity) {
+                $this->entities[] = new MessageEntity($entity);
+            }
         }
 
-        $this->animation = $payload['animation'] ? new Animation($payload['animation']) : null;
-        $this->audio = $payload['audio'] ? new Audio($payload['audio']) : null;
-        $this->document = $payload['document'] ? new Document($payload['document']) : null;
+        $this->animation = isset($payload['animation']) ? new Animation($payload['animation']) : null;
+        $this->audio = isset($payload['audio']) ? new Audio($payload['audio']) : null;
+        $this->document = isset($payload['document']) ? new Document($payload['document']) : null;
 
-        foreach ((array)$payload['photo'] as $photo) {
-            $this->photo[] = new PhotoSize($photo);
+        if (isset($payload['photo'])) {
+            foreach ((array)$payload['photo'] as $photo) {
+                $this->photo[] = new PhotoSize($photo);
+            }
         }
 
-        $this->sticker = $payload['sticker'] ? new Sticker($payload['sticker']) : null;
-        $this->video = $payload['video'] ? new Video($payload['video']) : null;
-        $this->videoNote = $payload['video_note'] ? new VideoNote($payload['video_note']) : null;
-        $this->voice = $payload['voice'] ? new Voice($payload['voice']) : null;
+        $this->sticker = isset($payload['sticker']) ? new Sticker($payload['sticker']) : null;
+        $this->video = isset($payload['video']) ? new Video($payload['video']) : null;
+        $this->videoNote = isset($payload['video_note']) ? new VideoNote($payload['video_note']) : null;
+        $this->voice = isset($payload['voice']) ? new Voice($payload['voice']) : null;
         $this->caption = $payload['caption'] ?? null;
 
-        foreach ((array)$payload['caption_entities'] as $captionEntity) {
-            $this->captionEntities[] = new MessageEntity($captionEntity);
+        if (isset($payload['caption_entities'])) {
+            foreach ((array)$payload['caption_entities'] as $captionEntity) {
+                $this->captionEntities[] = new MessageEntity($captionEntity);
+            }
         }
 
-        $this->contact = $payload['contact'] ? new Contact($payload['contact']) : null;
-        $this->dice = $payload['dice'] ? new Dice($payload['dice']) : null;
-        $this->game = $payload['game'] ? new Game($payload['game']) : null;
-        $this->poll = $payload['poll'] ? new Poll($payload['poll']) : null;
-        $this->venue = $payload['venue'] ? new Venue($payload['venue']) : null;
-        $this->location = $payload['location'] ? new Location($payload['location']) : null;
+        $this->contact = isset($payload['contact']) ? new Contact($payload['contact']) : null;
+        $this->dice = isset($payload['dice']) ? new Dice($payload['dice']) : null;
+        $this->game = isset($payload['game']) ? new Game($payload['game']) : null;
+        $this->poll = isset($payload['poll']) ? new Poll($payload['poll']) : null;
+        $this->venue = isset($payload['venue']) ? new Venue($payload['venue']) : null;
+        $this->location = isset($payload['location']) ? new Location($payload['location']) : null;
 
-        foreach ((array)$payload['new_chat_members'] as $newChatMember) {
-            $this->newChatMembers[] = new User($newChatMember);
+        if (isset($payload['new_chat_members'])) {
+            foreach ((array)$payload['new_chat_members'] as $newChatMember) {
+                $this->newChatMembers[] = new User($newChatMember);
+            }
         }
 
-        $this->leftChatMember = $payload['left_chat_member'] ? new User($payload['left_chat_member']) : null;
+        $this->leftChatMember = isset($payload['left_chat_member']) ? new User($payload['left_chat_member']) : null;
         $this->newChatTitle = $payload['new_chat_title'] ?? null;
 
-        foreach ((array)$payload['new_chat_photo'] as $newChatPhoto) {
-            $this->newChatPhoto[] = new PhotoSize($newChatPhoto);
+        if (isset($payload['new_chat_photo'])) {
+            foreach ((array)$payload['new_chat_photo'] as $newChatPhoto) {
+                $this->newChatPhoto[] = new PhotoSize($newChatPhoto);
+            }
         }
 
         $this->deleteChatPhoto = $payload['delete_chat_photo'] ?? null;
@@ -134,36 +144,36 @@ class Message extends BaseEntity
         $this->supergroupChatCreated = $payload['supergroup_chat_created'] ?? null;
         $this->channelChatCreated = $payload['channel_chat_created'] ?? null;
 
-        $this->messageAutoDeleteTimerChanged = $payload['message_auto_delete_timer_changed'] ? new MessageAutoDeleteTimerChanged(
-            $payload['message_auto_delete_timer_changed']
-        ) : null;
+        $this->messageAutoDeleteTimerChanged = isset($payload['message_auto_delete_timer_changed'])
+            ? new MessageAutoDeleteTimerChanged($payload['message_auto_delete_timer_changed'])
+            : null;
 
         $this->migrateToChatId = $payload['migrate_to_chat_id'] ?? null;
         $this->migrateFromChatId = $payload['migrate_from_chat_id'] ?? null;
 
-        $this->pinnedMessage = $payload['pinned_message'] ? new Message($payload['pinned_message']) : null;
-        $this->invoice = $payload['invoice'] ? new Invoice($payload['invoice']) : null;
-        $this->successfulPayment = $payload['successful_payment'] ? new SuccessfulPayment(
-            $payload['successful_payment']
-        ) : null;
+        $this->pinnedMessage = isset($payload['pinned_message']) ? new Message($payload['pinned_message']) : null;
+        $this->invoice = isset($payload['invoice']) ? new Invoice($payload['invoice']) : null;
+        $this->successfulPayment = isset($payload['successful_payment'])
+            ? new SuccessfulPayment($payload['successful_payment'])
+            : null;
 
         $this->connectedWebsite = $payload['connected_website'] ?? null;
 
-        $this->passportData = $payload['passport_data'] ? new PassportData($payload['passport_data']) : null;
-        $this->proximityAlertTriggered = $payload['proximity_alert_triggered'] ? new ProximityAlertTriggered(
-            $payload['proximity_alert_triggered']
-        ) : null;
-        $this->voiceChatScheduled = $payload['voice_chat_scheduled'] ? new VoiceChatScheduled(
-            $payload['voice_chat_scheduled']
-        ) : null;
-        $this->voiceChatStarted = $payload['voice_chat_started'] ? new VoiceChatStarted(
-            $payload['voice_chat_started']
-        ) : null;
-        $this->voiceChatEnded = $payload['voice_chat_ended'] ? new VoiceChatEnded($payload['voice_chat_ended']) : null;
-        $this->voiceChatParticipantsInvited = $payload['voice_chat_participants_invited'] ? new VoiceChatParticipantsInvited(
-            $payload['voice_chat_participants_invited']
-        ) : null;
-        $this->replyMarkup = $payload['reply_markup'] ? new InlineKeyboardMarkup($payload['reply_markup']) : null;
+        $this->passportData = isset($payload['passport_data']) ? new PassportData($payload['passport_data']) : null;
+        $this->proximityAlertTriggered = isset($payload['proximity_alert_triggered'])
+            ? new ProximityAlertTriggered($payload['proximity_alert_triggered'])
+            : null;
+        $this->voiceChatScheduled = isset($payload['voice_chat_scheduled'])
+            ? new VoiceChatScheduled($payload['voice_chat_scheduled'])
+            : null;
+        $this->voiceChatStarted = isset($payload['voice_chat_started'])
+            ? new VoiceChatStarted($payload['voice_chat_started'])
+            : null;
+        $this->voiceChatEnded = isset($payload['voice_chat_ended']) ? new VoiceChatEnded($payload['voice_chat_ended']) : null;
+        $this->voiceChatParticipantsInvited = isset($payload['voice_chat_participants_invited'])
+            ? new VoiceChatParticipantsInvited($payload['voice_chat_participants_invited'])
+            : null;
+        $this->replyMarkup = isset($payload['reply_markup']) ? new InlineKeyboardMarkup($payload['reply_markup']) : null;
     }
 
     public function getMessageId(): int
