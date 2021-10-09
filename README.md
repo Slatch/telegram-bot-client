@@ -1,45 +1,41 @@
 # telegram-bot-client
-Client for https://core.telegram.org/bots/api
+PHP client for telegram
 
-Installing:
+Requirements
+---
+
+- PHP 7.4 or higher
+- curl
+- [PSR-18 http client](https://www.php-fig.org/psr/psr-18/) (for example, [guzzle](https://github.com/guzzle/guzzle))
+
+Installing
+---
 ```bash
 composer require "slatch/telegram-bot-client"
 ```
 
-Usage:
+Usage
+---
 
+List of available methods: https://core.telegram.org/bots/api#available-methods
+
+Example:
 ```php
 use Slatch\TelegramBotClient\Api\Config;
+use Slatch\TelegramBotClient\Arguments\SendMessage;
 use Slatch\TelegramBotClient\BotClient;
 use Slatch\TelegramBotClient\Bot\Credentials;
-use Slatch\TelegramBotClient\Arguments\SendMessage;
 
 ...
 
+// Initialize bot client
 $botClient = new BotClient($httpClient, new Credentials($token), new Config('https://api.telegram.org'));
 
+// Prepare message
 $message = new SendMessage();
 $message->setChatId(12345678);
 $message->setText("Hello World!");
 
+// Send
 $botClient->sendMessage($message);
-```
-
-Testing:
-
-codeception:
-```bash
-docker run --rm --interactive --tty --volume ${PWD}:/app composer require "codeception/codeception" --dev -W
-```
-
-
-
-bootstrap
-```bash
-docker run -it --rm --name tests -v ${PWD}:/usr/src/myapp -w /usr/src/myapp php:8.0-cli php ./vendor/bin/codecept bootstrap
-```
-
-run
-```bash
-docker run -it --rm --name tests -v ${PWD}:/usr/src/myapp -w /usr/src/myapp php:8.0-cli php ./vendor/bin/codecept run
 ```
