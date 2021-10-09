@@ -74,7 +74,7 @@ class BotClient
         return $method->parseResponse($response->getBody());
     }
 
-    public function sendMessage(\Slatch\TelegramBotClient\Arguments\SendMessageArgument $argument): Message
+    public function sendMessage(\Slatch\TelegramBotClient\Arguments\SendMessage $argument): Message
     {
         $method = new \Slatch\TelegramBotClient\Methods\SendMessage();
         $request = $this->buildRequest($method->getMethod(), $argument);
@@ -83,7 +83,7 @@ class BotClient
         return $method->parseResponse($response->getBody());
     }
 
-    public function forwardMessage(\Slatch\TelegramBotClient\Arguments\ForwardMessageArgument $argument): Message
+    public function forwardMessage(\Slatch\TelegramBotClient\Arguments\ForwardMessage $argument): Message
     {
         $method = new \Slatch\TelegramBotClient\Methods\ForwardMessage();
         $request = $this->buildRequest($method->getMethod(), $argument);
@@ -92,7 +92,7 @@ class BotClient
         return $method->parseResponse($response->getBody());
     }
 
-    public function copyMessage(\Slatch\TelegramBotClient\Arguments\CopyMessageArgument $argument): MessageId
+    public function copyMessage(\Slatch\TelegramBotClient\Arguments\CopyMessage $argument): MessageId
     {
         $method = new \Slatch\TelegramBotClient\Methods\CopyMessage();
         $request = $this->buildRequest($method->getMethod(), $argument);
@@ -101,7 +101,7 @@ class BotClient
         return $method->parseResponse($response->getBody());
     }
 
-    public function sendPhoto(\Slatch\TelegramBotClient\Arguments\SendPhotoArgument $argument): Message
+    public function sendPhoto(\Slatch\TelegramBotClient\Arguments\SendPhoto $argument): Message
     {
         $method = new \Slatch\TelegramBotClient\Methods\SendPhoto();
         $request = $this->buildRequest($method->getMethod(), $argument);
@@ -110,7 +110,7 @@ class BotClient
         return $method->parseResponse($response->getBody());
     }
 
-    public function sendAudio(\Slatch\TelegramBotClient\Arguments\SendAudioArgument $argument): Message
+    public function sendAudio(\Slatch\TelegramBotClient\Arguments\SendAudio $argument): Message
     {
         $method = new \Slatch\TelegramBotClient\Methods\SendAudio();
         $request = $this->buildRequest($method->getMethod(), $argument);
@@ -119,7 +119,7 @@ class BotClient
         return $method->parseResponse($response->getBody());
     }
 
-    public function sendDocument(\Slatch\TelegramBotClient\Arguments\SendDocumentArgument $argument): Message
+    public function sendDocument(\Slatch\TelegramBotClient\Arguments\SendDocument $argument): Message
     {
         $method = new \Slatch\TelegramBotClient\Methods\SendDocument();
         $request = $this->buildRequest($method->getMethod(), $argument);
@@ -128,7 +128,7 @@ class BotClient
         return $method->parseResponse($response->getBody());
     }
 
-    public function sendVideo(\Slatch\TelegramBotClient\Arguments\SendVideoArgument $argument): Message
+    public function sendVideo(\Slatch\TelegramBotClient\Arguments\SendVideo $argument): Message
     {
         $method = new \Slatch\TelegramBotClient\Methods\SendVideo();
         $request = $this->buildRequest($method->getMethod(), $argument);
@@ -137,7 +137,7 @@ class BotClient
         return $method->parseResponse($response->getBody());
     }
 
-    public function sendAnimation(\Slatch\TelegramBotClient\Arguments\SendAnimationArgument $argument): Message
+    public function sendAnimation(\Slatch\TelegramBotClient\Arguments\SendAnimation $argument): Message
     {
         $method = new \Slatch\TelegramBotClient\Methods\SendAnimation();
         $request = $this->buildRequest($method->getMethod(), $argument);
@@ -146,7 +146,7 @@ class BotClient
         return $method->parseResponse($response->getBody());
     }
 
-    public function sendVoice(\Slatch\TelegramBotClient\Arguments\SendVoiceArgument $argument): Message
+    public function sendVoice(\Slatch\TelegramBotClient\Arguments\SendVoice $argument): Message
     {
         $method = new \Slatch\TelegramBotClient\Methods\SendVoice();
         $request = $this->buildRequest($method->getMethod(), $argument);
@@ -155,7 +155,7 @@ class BotClient
         return $method->parseResponse($response->getBody());
     }
 
-    public function sendVideoNote(\Slatch\TelegramBotClient\Arguments\SendVideoNoteArgument $argument): Message
+    public function sendVideoNote(\Slatch\TelegramBotClient\Arguments\SendVideoNote $argument): Message
     {
         $method = new \Slatch\TelegramBotClient\Methods\SendVideoNote();
         $request = $this->buildRequest($method->getMethod(), $argument);
@@ -165,10 +165,10 @@ class BotClient
     }
 
     /**
-     * @param Arguments\SendMediaGroupArgument $argument
+     * @param Arguments\SendMediaGroup $argument
      * @return Message[]
      */
-    public function sendMediaGroup(\Slatch\TelegramBotClient\Arguments\SendMediaGroupArgument $argument): array
+    public function sendMediaGroup(\Slatch\TelegramBotClient\Arguments\SendMediaGroup $argument): array
     {
         $method = new \Slatch\TelegramBotClient\Methods\SendMediaGroup();
         $request = $this->buildRequest($method->getMethod(), $argument);
@@ -177,7 +177,7 @@ class BotClient
         return $method->parseResponse($response->getBody());
     }
 
-    public function sendLocation(\Slatch\TelegramBotClient\Arguments\SendLocationArgument $argument): Message
+    public function sendLocation(\Slatch\TelegramBotClient\Arguments\SendLocation $argument): Message
     {
         $method = new \Slatch\TelegramBotClient\Methods\SendLocation();
         $request = $this->buildRequest($method->getMethod(), $argument);
@@ -186,7 +186,7 @@ class BotClient
         return $method->parseResponse($response->getBody());
     }
 
-    public function editMessageLiveLocation(\Slatch\TelegramBotClient\Arguments\EditMessageLiveLocationArgument $argument): Message
+    public function editMessageLiveLocation(\Slatch\TelegramBotClient\Arguments\EditMessageLiveLocation $argument): Message
     {
         $method = new \Slatch\TelegramBotClient\Methods\EditMessageLiveLocation();
         $request = $this->buildRequest($method->getMethod(), $argument);
@@ -195,7 +195,7 @@ class BotClient
         return $method->parseResponse($response->getBody());
     }
 
-    public function stopMessageLiveLocation(\Slatch\TelegramBotClient\Arguments\StopMessageLiveLocationArgument $argument): Message
+    public function stopMessageLiveLocation(\Slatch\TelegramBotClient\Arguments\StopMessageLiveLocation $argument): Message
     {
         $method = new \Slatch\TelegramBotClient\Methods\StopMessageLiveLocation();
         $request = $this->buildRequest($method->getMethod(), $argument);
@@ -204,7 +204,7 @@ class BotClient
         return $method->parseResponse($response->getBody());
     }
 
-    public function sendVenue(\Slatch\TelegramBotClient\Arguments\SendVenueArgument $argument): Message
+    public function sendVenue(\Slatch\TelegramBotClient\Arguments\SendVenue $argument): Message
     {
         $method = new \Slatch\TelegramBotClient\Methods\SendVenue();
         $request = $this->buildRequest($method->getMethod(), $argument);
@@ -213,7 +213,7 @@ class BotClient
         return $method->parseResponse($response->getBody());
     }
 
-    public function sendContact(\Slatch\TelegramBotClient\Arguments\SendContactArgument $argument): Message
+    public function sendContact(\Slatch\TelegramBotClient\Arguments\SendContact $argument): Message
     {
         $method = new \Slatch\TelegramBotClient\Methods\SendContact();
         $request = $this->buildRequest($method->getMethod(), $argument);
@@ -222,7 +222,7 @@ class BotClient
         return $method->parseResponse($response->getBody());
     }
 
-    public function sendPoll(\Slatch\TelegramBotClient\Arguments\SendPollArgument $argument): Message
+    public function sendPoll(\Slatch\TelegramBotClient\Arguments\SendPoll $argument): Message
     {
         $method = new \Slatch\TelegramBotClient\Methods\SendPoll();
         $request = $this->buildRequest($method->getMethod(), $argument);
@@ -231,7 +231,7 @@ class BotClient
         return $method->parseResponse($response->getBody());
     }
 
-    public function sendDice(\Slatch\TelegramBotClient\Arguments\SendDiceArgument $argument): Message
+    public function sendDice(\Slatch\TelegramBotClient\Arguments\SendDice $argument): Message
     {
         $method = new \Slatch\TelegramBotClient\Methods\SendDice();
         $request = $this->buildRequest($method->getMethod(), $argument);
@@ -240,7 +240,7 @@ class BotClient
         return $method->parseResponse($response->getBody());
     }
 
-    public function sendChatAction(\Slatch\TelegramBotClient\Arguments\SendChatActionArgument $argument): bool
+    public function sendChatAction(\Slatch\TelegramBotClient\Arguments\SendChatAction $argument): bool
     {
         $method = new \Slatch\TelegramBotClient\Methods\SendChatAction();
         $request = $this->buildRequest($method->getMethod(), $argument);
@@ -249,7 +249,7 @@ class BotClient
         return $method->parseResponse($response->getBody());
     }
 
-    public function getUserProfilePhotos(\Slatch\TelegramBotClient\Arguments\GetUserProfilePhotosArgument $argument): UserProfilePhotos
+    public function getUserProfilePhotos(\Slatch\TelegramBotClient\Arguments\GetUserProfilePhotos $argument): UserProfilePhotos
     {
         $method = new \Slatch\TelegramBotClient\Methods\GetUserProfilePhotos();
         $request = $this->buildRequest($method->getMethod(), $argument);
@@ -258,7 +258,7 @@ class BotClient
         return $method->parseResponse($response->getBody());
     }
 
-    public function getFile(\Slatch\TelegramBotClient\Arguments\GetFileArgument $argument): File
+    public function getFile(\Slatch\TelegramBotClient\Arguments\GetFile $argument): File
     {
         $method = new \Slatch\TelegramBotClient\Methods\GetFile();
         $request = $this->buildRequest($method->getMethod(), $argument);
@@ -267,7 +267,7 @@ class BotClient
         return $method->parseResponse($response->getBody());
     }
 
-    public function banChatMember(\Slatch\TelegramBotClient\Arguments\BanChatMemberArgument $argument): bool
+    public function banChatMember(\Slatch\TelegramBotClient\Arguments\BanChatMember $argument): bool
     {
         $method = new \Slatch\TelegramBotClient\Methods\BanChatMember();
         $request = $this->buildRequest($method->getMethod(), $argument);
@@ -276,7 +276,7 @@ class BotClient
         return $method->parseResponse($response->getBody());
     }
 
-    public function unbanChatMember(\Slatch\TelegramBotClient\Arguments\UnbanChatMemberArgument $argument): bool
+    public function unbanChatMember(\Slatch\TelegramBotClient\Arguments\UnbanChatMember $argument): bool
     {
         $method = new \Slatch\TelegramBotClient\Methods\UnbanChatMember();
         $request = $this->buildRequest($method->getMethod(), $argument);
@@ -285,7 +285,7 @@ class BotClient
         return $method->parseResponse($response->getBody());
     }
 
-    public function restrictChatMember(\Slatch\TelegramBotClient\Arguments\RestrictChatMemberArgument $argument): bool
+    public function restrictChatMember(\Slatch\TelegramBotClient\Arguments\RestrictChatMember $argument): bool
     {
         $method = new \Slatch\TelegramBotClient\Methods\RestrictChatMember();
         $request = $this->buildRequest($method->getMethod(), $argument);
@@ -294,7 +294,7 @@ class BotClient
         return $method->parseResponse($response->getBody());
     }
 
-    public function promoteChatMember(\Slatch\TelegramBotClient\Arguments\PromoteChatMemberArgument $argument): bool
+    public function promoteChatMember(\Slatch\TelegramBotClient\Arguments\PromoteChatMember $argument): bool
     {
         $method = new \Slatch\TelegramBotClient\Methods\PromoteChatMember();
         $request = $this->buildRequest($method->getMethod(), $argument);
@@ -303,7 +303,7 @@ class BotClient
         return $method->parseResponse($response->getBody());
     }
 
-    public function setChatAdministratorCustomTitle(\Slatch\TelegramBotClient\Arguments\SetChatAdministratorCustomTitleArgument $argument): bool
+    public function setChatAdministratorCustomTitle(\Slatch\TelegramBotClient\Arguments\SetChatAdministratorCustomTitle $argument): bool
     {
         $method = new \Slatch\TelegramBotClient\Methods\SetChatAdministratorCustomTitle();
         $request = $this->buildRequest($method->getMethod(), $argument);
@@ -312,7 +312,7 @@ class BotClient
         return $method->parseResponse($response->getBody());
     }
 
-    public function setChatPermissions(\Slatch\TelegramBotClient\Arguments\SetChatPermissionsArgument $argument): bool
+    public function setChatPermissions(\Slatch\TelegramBotClient\Arguments\SetChatPermissions $argument): bool
     {
         $method = new \Slatch\TelegramBotClient\Methods\SetChatPermissions();
         $request = $this->buildRequest($method->getMethod(), $argument);
@@ -321,7 +321,7 @@ class BotClient
         return $method->parseResponse($response->getBody());
     }
 
-    public function exportChatInviteLink(\Slatch\TelegramBotClient\Arguments\ExportChatInviteLinkArgument $argument): bool
+    public function exportChatInviteLink(\Slatch\TelegramBotClient\Arguments\ExportChatInviteLink $argument): bool
     {
         $method = new \Slatch\TelegramBotClient\Methods\ExportChatInviteLink();
         $request = $this->buildRequest($method->getMethod(), $argument);
@@ -330,7 +330,7 @@ class BotClient
         return $method->parseResponse($response->getBody());
     }
 
-    public function createChatInviteLink(\Slatch\TelegramBotClient\Arguments\CreateChatInviteLinkArgument $argument): ChatInviteLink
+    public function createChatInviteLink(\Slatch\TelegramBotClient\Arguments\CreateChatInviteLink $argument): ChatInviteLink
     {
         $method = new \Slatch\TelegramBotClient\Methods\CreateChatInviteLink();
         $request = $this->buildRequest($method->getMethod(), $argument);
@@ -339,7 +339,7 @@ class BotClient
         return $method->parseResponse($response->getBody());
     }
 
-    public function editChatInviteLink(\Slatch\TelegramBotClient\Arguments\EditChatInviteLinkArgument $argument): ChatInviteLink
+    public function editChatInviteLink(\Slatch\TelegramBotClient\Arguments\EditChatInviteLink $argument): ChatInviteLink
     {
         $method = new \Slatch\TelegramBotClient\Methods\EditChatInviteLink();
         $request = $this->buildRequest($method->getMethod(), $argument);
@@ -348,7 +348,7 @@ class BotClient
         return $method->parseResponse($response->getBody());
     }
 
-    public function revokeChatInviteLink(\Slatch\TelegramBotClient\Arguments\RevokeChatInviteLinkArgument $argument): ChatInviteLink
+    public function revokeChatInviteLink(\Slatch\TelegramBotClient\Arguments\RevokeChatInviteLink $argument): ChatInviteLink
     {
         $method = new \Slatch\TelegramBotClient\Methods\RevokeChatInviteLink();
         $request = $this->buildRequest($method->getMethod(), $argument);
@@ -357,7 +357,7 @@ class BotClient
         return $method->parseResponse($response->getBody());
     }
 
-    public function setChatPhoto(\Slatch\TelegramBotClient\Arguments\SetChatPhotoArgument $argument): bool
+    public function setChatPhoto(\Slatch\TelegramBotClient\Arguments\SetChatPhoto $argument): bool
     {
         $method = new \Slatch\TelegramBotClient\Methods\SetChatPhoto();
         $request = $this->buildRequest($method->getMethod(), $argument);
@@ -366,7 +366,7 @@ class BotClient
         return $method->parseResponse($response->getBody());
     }
 
-    public function deleteChatPhoto(\Slatch\TelegramBotClient\Arguments\DeleteChatPhotoArgument $argument): bool
+    public function deleteChatPhoto(\Slatch\TelegramBotClient\Arguments\DeleteChatPhoto $argument): bool
     {
         $method = new \Slatch\TelegramBotClient\Methods\DeleteChatPhoto();
         $request = $this->buildRequest($method->getMethod(), $argument);
@@ -375,7 +375,7 @@ class BotClient
         return $method->parseResponse($response->getBody());
     }
 
-    public function setChatTitle(\Slatch\TelegramBotClient\Arguments\SetChatTitleArgument $argument): bool
+    public function setChatTitle(\Slatch\TelegramBotClient\Arguments\SetChatTitle $argument): bool
     {
         $method = new \Slatch\TelegramBotClient\Methods\SetChatTitle();
         $request = $this->buildRequest($method->getMethod(), $argument);
@@ -384,7 +384,7 @@ class BotClient
         return $method->parseResponse($response->getBody());
     }
 
-    public function setChatDescription(\Slatch\TelegramBotClient\Arguments\SetChatDescriptionArgument $argument): bool
+    public function setChatDescription(\Slatch\TelegramBotClient\Arguments\SetChatDescription $argument): bool
     {
         $method = new \Slatch\TelegramBotClient\Methods\SetChatDescription();
         $request = $this->buildRequest($method->getMethod(), $argument);
@@ -393,7 +393,7 @@ class BotClient
         return $method->parseResponse($response->getBody());
     }
 
-    public function pinChatMessage(\Slatch\TelegramBotClient\Arguments\PinChatMessageArgument $argument): bool
+    public function pinChatMessage(\Slatch\TelegramBotClient\Arguments\PinChatMessage $argument): bool
     {
         $method = new \Slatch\TelegramBotClient\Methods\PinChatMessage();
         $request = $this->buildRequest($method->getMethod(), $argument);
@@ -402,7 +402,7 @@ class BotClient
         return $method->parseResponse($response->getBody());
     }
 
-    public function unpinChatMessage(\Slatch\TelegramBotClient\Arguments\UnpinChatMessageArgument $argument): bool
+    public function unpinChatMessage(\Slatch\TelegramBotClient\Arguments\UnpinChatMessage $argument): bool
     {
         $method = new \Slatch\TelegramBotClient\Methods\UnpinChatMessage();
         $request = $this->buildRequest($method->getMethod(), $argument);
@@ -411,7 +411,7 @@ class BotClient
         return $method->parseResponse($response->getBody());
     }
 
-    public function unpinAllChatMessages(\Slatch\TelegramBotClient\Arguments\UnpinAllChatMessagesArgument $argument): bool
+    public function unpinAllChatMessages(\Slatch\TelegramBotClient\Arguments\UnpinAllChatMessages $argument): bool
     {
         $method = new \Slatch\TelegramBotClient\Methods\UnpinAllChatMessages();
         $request = $this->buildRequest($method->getMethod(), $argument);
@@ -420,7 +420,7 @@ class BotClient
         return $method->parseResponse($response->getBody());
     }
 
-    public function leaveChat(\Slatch\TelegramBotClient\Arguments\LeaveChatArgument $argument): bool
+    public function leaveChat(\Slatch\TelegramBotClient\Arguments\LeaveChat $argument): bool
     {
         $method = new \Slatch\TelegramBotClient\Methods\LeaveChat();
         $request = $this->buildRequest($method->getMethod(), $argument);
@@ -429,7 +429,7 @@ class BotClient
         return $method->parseResponse($response->getBody());
     }
 
-    public function getChat(\Slatch\TelegramBotClient\Arguments\GetChatArgument $argument): Chat
+    public function getChat(\Slatch\TelegramBotClient\Arguments\GetChat $argument): Chat
     {
         $method = new \Slatch\TelegramBotClient\Methods\GetChat();
         $request = $this->buildRequest($method->getMethod(), $argument);
@@ -441,7 +441,7 @@ class BotClient
     /**
      * @return ChatMemberAdministrator[]
      */
-    public function getChatAdministrators(\Slatch\TelegramBotClient\Arguments\GetChatAdministratorsArgument $argument): array
+    public function getChatAdministrators(\Slatch\TelegramBotClient\Arguments\GetChatAdministrators $argument): array
     {
         $method = new \Slatch\TelegramBotClient\Methods\GetChatAdministrators();
         $request = $this->buildRequest($method->getMethod(), $argument);
@@ -450,7 +450,7 @@ class BotClient
         return $method->parseResponse($response->getBody());
     }
 
-    public function getChatMemberCount(\Slatch\TelegramBotClient\Arguments\GetChatMemberCountArgument $argument): int
+    public function getChatMemberCount(\Slatch\TelegramBotClient\Arguments\GetChatMemberCount $argument): int
     {
         $method = new \Slatch\TelegramBotClient\Methods\GetChatMemberCount();
         $request = $this->buildRequest($method->getMethod(), $argument);
@@ -459,7 +459,7 @@ class BotClient
         return $method->parseResponse($response->getBody());
     }
 
-    public function getChatMember(\Slatch\TelegramBotClient\Arguments\GetChatMemberArgument $argument): ChatMember
+    public function getChatMember(\Slatch\TelegramBotClient\Arguments\GetChatMember $argument): ChatMember
     {
         throw new NotImplementedException('Make valid chat member');
         $method = new \Slatch\TelegramBotClient\Methods\GetChatMember();
@@ -469,7 +469,7 @@ class BotClient
         return $method->parseResponse($response->getBody());
     }
 
-    public function setChatStickerSet(\Slatch\TelegramBotClient\Arguments\SetChatStickerSetArgument $argument): bool
+    public function setChatStickerSet(\Slatch\TelegramBotClient\Arguments\SetChatStickerSet $argument): bool
     {
         $method = new \Slatch\TelegramBotClient\Methods\SetChatStickerSet();
         $request = $this->buildRequest($method->getMethod(), $argument);
@@ -478,7 +478,7 @@ class BotClient
         return $method->parseResponse($response->getBody());
     }
 
-    public function deleteChatStickerSet(\Slatch\TelegramBotClient\Arguments\DeleteChatStickerSetArgument $argument): bool
+    public function deleteChatStickerSet(\Slatch\TelegramBotClient\Arguments\DeleteChatStickerSet $argument): bool
     {
         $method = new \Slatch\TelegramBotClient\Methods\DeleteChatStickerSet();
         $request = $this->buildRequest($method->getMethod(), $argument);
@@ -487,7 +487,7 @@ class BotClient
         return $method->parseResponse($response->getBody());
     }
 
-    public function answerCallbackQuery(\Slatch\TelegramBotClient\Arguments\AnswerCallbackQueryArgument $argument): bool
+    public function answerCallbackQuery(\Slatch\TelegramBotClient\Arguments\AnswerCallbackQuery $argument): bool
     {
         $method = new \Slatch\TelegramBotClient\Methods\AnswerCallbackQuery();
         $request = $this->buildRequest($method->getMethod(), $argument);
@@ -496,7 +496,7 @@ class BotClient
         return $method->parseResponse($response->getBody());
     }
 
-    public function setMyCommands(\Slatch\TelegramBotClient\Arguments\SetMyCommandsArgument $argument): bool
+    public function setMyCommands(\Slatch\TelegramBotClient\Arguments\SetMyCommands $argument): bool
     {
         $method = new \Slatch\TelegramBotClient\Methods\SetMyCommands();
         $request = $this->buildRequest($method->getMethod(), $argument);
@@ -505,7 +505,7 @@ class BotClient
         return $method->parseResponse($response->getBody());
     }
 
-    public function deleteMyCommands(\Slatch\TelegramBotClient\Arguments\DeleteMyCommandsArgument $argument): bool
+    public function deleteMyCommands(\Slatch\TelegramBotClient\Arguments\DeleteMyCommands $argument): bool
     {
         $method = new \Slatch\TelegramBotClient\Methods\DeleteMyCommands();
         $request = $this->buildRequest($method->getMethod(), $argument);
@@ -515,10 +515,10 @@ class BotClient
     }
 
     /**
-     * @param Arguments\GetMyCommandsArgument $argument
+     * @param Arguments\GetMyCommands $argument
      * @return BotCommand[]
      */
-    public function getMyCommands(\Slatch\TelegramBotClient\Arguments\GetMyCommandsArgument $argument): array
+    public function getMyCommands(\Slatch\TelegramBotClient\Arguments\GetMyCommands $argument): array
     {
         $method = new \Slatch\TelegramBotClient\Methods\GetMyCommands();
         $request = $this->buildRequest($method->getMethod(), $argument);
@@ -528,10 +528,10 @@ class BotClient
     }
 
     /**
-     * @param Arguments\EditMessageTextArgument $argument
+     * @param Arguments\EditMessageText $argument
      * @return Message|bool
      */
-    public function editMessageText(\Slatch\TelegramBotClient\Arguments\EditMessageTextArgument $argument)
+    public function editMessageText(\Slatch\TelegramBotClient\Arguments\EditMessageText $argument)
     {
         $method = new \Slatch\TelegramBotClient\Methods\EditMessageText();
         $request = $this->buildRequest($method->getMethod(), $argument);
@@ -541,10 +541,10 @@ class BotClient
     }
 
     /**
-     * @param Arguments\EditMessageCaptionArgument $argument
+     * @param Arguments\EditMessageCaption $argument
      * @return Message|bool
      */
-    public function editMessageCaption(\Slatch\TelegramBotClient\Arguments\EditMessageCaptionArgument $argument)
+    public function editMessageCaption(\Slatch\TelegramBotClient\Arguments\EditMessageCaption $argument)
     {
         $method = new \Slatch\TelegramBotClient\Methods\EditMessageCaption();
         $request = $this->buildRequest($method->getMethod(), $argument);
@@ -554,10 +554,10 @@ class BotClient
     }
 
     /**
-     * @param Arguments\EditMessageMediaArgument $argument
+     * @param Arguments\EditMessageMedia $argument
      * @return Message|bool
      */
-    public function editMessageMedia(\Slatch\TelegramBotClient\Arguments\EditMessageMediaArgument $argument)
+    public function editMessageMedia(\Slatch\TelegramBotClient\Arguments\EditMessageMedia $argument)
     {
         $method = new \Slatch\TelegramBotClient\Methods\EditMessageMedia();
         $request = $this->buildRequest($method->getMethod(), $argument);
@@ -567,10 +567,10 @@ class BotClient
     }
 
     /**
-     * @param Arguments\EditMessageReplyMarkupArgument $argument
+     * @param Arguments\EditMessageReplyMarkup $argument
      * @return Message|bool
      */
-    public function editMessageReplyMarkup(\Slatch\TelegramBotClient\Arguments\EditMessageReplyMarkupArgument $argument)
+    public function editMessageReplyMarkup(\Slatch\TelegramBotClient\Arguments\EditMessageReplyMarkup $argument)
     {
         $method = new \Slatch\TelegramBotClient\Methods\EditMessageReplyMarkup();
         $request = $this->buildRequest($method->getMethod(), $argument);
@@ -579,7 +579,7 @@ class BotClient
         return $method->parseResponse($response->getBody());
     }
 
-    public function stopPoll(\Slatch\TelegramBotClient\Arguments\StopPollArgument $argument): Poll
+    public function stopPoll(\Slatch\TelegramBotClient\Arguments\StopPoll $argument): Poll
     {
         $method = new \Slatch\TelegramBotClient\Methods\StopPoll();
         $request = $this->buildRequest($method->getMethod(), $argument);
@@ -588,7 +588,7 @@ class BotClient
         return $method->parseResponse($response->getBody());
     }
 
-    public function deleteMessage(\Slatch\TelegramBotClient\Arguments\DeleteMessageArgument $argument): bool
+    public function deleteMessage(\Slatch\TelegramBotClient\Arguments\DeleteMessage $argument): bool
     {
         $method = new \Slatch\TelegramBotClient\Methods\DeleteMessage();
         $request = $this->buildRequest($method->getMethod(), $argument);
@@ -597,7 +597,7 @@ class BotClient
         return $method->parseResponse($response->getBody());
     }
 
-    public function sendSticker(\Slatch\TelegramBotClient\Arguments\SendStickerArgument $argument): Message
+    public function sendSticker(\Slatch\TelegramBotClient\Arguments\SendSticker $argument): Message
     {
         $method = new \Slatch\TelegramBotClient\Methods\SendSticker();
         $request = $this->buildRequest($method->getMethod(), $argument);
@@ -606,7 +606,7 @@ class BotClient
         return $method->parseResponse($response->getBody());
     }
 
-    public function getStickerSet(\Slatch\TelegramBotClient\Arguments\GetStickerSetArgument $argument): StickerSet
+    public function getStickerSet(\Slatch\TelegramBotClient\Arguments\GetStickerSet $argument): StickerSet
     {
         $method = new \Slatch\TelegramBotClient\Methods\GetStickerSet();
         $request = $this->buildRequest($method->getMethod(), $argument);
@@ -615,7 +615,7 @@ class BotClient
         return $method->parseResponse($response->getBody());
     }
 
-    public function uploadStickerFile(\Slatch\TelegramBotClient\Arguments\UploadStickerFileArgument $argument): File
+    public function uploadStickerFile(\Slatch\TelegramBotClient\Arguments\UploadStickerFile $argument): File
     {
         $method = new \Slatch\TelegramBotClient\Methods\UploadStickerFile();
         $request = $this->buildRequest($method->getMethod(), $argument);
@@ -624,7 +624,7 @@ class BotClient
         return $method->parseResponse($response->getBody());
     }
 
-    public function createNewStickerSet(\Slatch\TelegramBotClient\Arguments\CreateNewStickerSetArgument $argument): bool
+    public function createNewStickerSet(\Slatch\TelegramBotClient\Arguments\CreateNewStickerSet $argument): bool
     {
         $method = new \Slatch\TelegramBotClient\Methods\CreateNewStickerSet();
         $request = $this->buildRequest($method->getMethod(), $argument);
@@ -633,7 +633,7 @@ class BotClient
         return $method->parseResponse($response->getBody());
     }
 
-    public function addStickerToSet(\Slatch\TelegramBotClient\Arguments\AddStickerToSetArgument $argument): bool
+    public function addStickerToSet(\Slatch\TelegramBotClient\Arguments\AddStickerToSet $argument): bool
     {
         $method = new \Slatch\TelegramBotClient\Methods\AddStickerToSet();
         $request = $this->buildRequest($method->getMethod(), $argument);
@@ -642,7 +642,7 @@ class BotClient
         return $method->parseResponse($response->getBody());
     }
 
-    public function setStickerPositionInSet(\Slatch\TelegramBotClient\Arguments\SetStickerPositionInSetArgument $argument): bool
+    public function setStickerPositionInSet(\Slatch\TelegramBotClient\Arguments\SetStickerPositionInSet $argument): bool
     {
         $method = new \Slatch\TelegramBotClient\Methods\SetStickerPositionInSet();
         $request = $this->buildRequest($method->getMethod(), $argument);
@@ -651,7 +651,7 @@ class BotClient
         return $method->parseResponse($response->getBody());
     }
 
-    public function deleteStickerFromSet(\Slatch\TelegramBotClient\Arguments\DeleteStickerFromSetArgument $argument): bool
+    public function deleteStickerFromSet(\Slatch\TelegramBotClient\Arguments\DeleteStickerFromSet $argument): bool
     {
         $method = new \Slatch\TelegramBotClient\Methods\DeleteStickerFromSet();
         $request = $this->buildRequest($method->getMethod(), $argument);
@@ -660,7 +660,7 @@ class BotClient
         return $method->parseResponse($response->getBody());
     }
 
-    public function setStickerSetThumb(\Slatch\TelegramBotClient\Arguments\SetStickerSetThumbArgument $argument): bool
+    public function setStickerSetThumb(\Slatch\TelegramBotClient\Arguments\SetStickerSetThumb $argument): bool
     {
         $method = new \Slatch\TelegramBotClient\Methods\SetStickerSetThumb();
         $request = $this->buildRequest($method->getMethod(), $argument);
@@ -669,7 +669,7 @@ class BotClient
         return $method->parseResponse($response->getBody());
     }
 
-    public function answerInlineQuery(\Slatch\TelegramBotClient\Arguments\AnswerInlineQueryArgument $argument): bool
+    public function answerInlineQuery(\Slatch\TelegramBotClient\Arguments\AnswerInline $argument): bool
     {
         $method = new \Slatch\TelegramBotClient\Methods\AnswerInlineQuery();
         $request = $this->buildRequest($method->getMethod(), $argument);
@@ -678,7 +678,7 @@ class BotClient
         return $method->parseResponse($response->getBody());
     }
 
-    public function sendInvoice(\Slatch\TelegramBotClient\Arguments\SendInvoiceArgument $argument): Message
+    public function sendInvoice(\Slatch\TelegramBotClient\Arguments\SendInvoice $argument): Message
     {
         $method = new \Slatch\TelegramBotClient\Methods\SendInvoice();
         $request = $this->buildRequest($method->getMethod(), $argument);
@@ -687,7 +687,7 @@ class BotClient
         return $method->parseResponse($response->getBody());
     }
 
-    public function answerShippingQuery(\Slatch\TelegramBotClient\Arguments\AnswerShippingQueryArgument $argument): bool
+    public function answerShippingQuery(\Slatch\TelegramBotClient\Arguments\AnswerShippingQuery $argument): bool
     {
         $method = new \Slatch\TelegramBotClient\Methods\AnswerShippingQuery();
         $request = $this->buildRequest($method->getMethod(), $argument);
@@ -696,7 +696,7 @@ class BotClient
         return $method->parseResponse($response->getBody());
     }
 
-    public function answerPreCheckoutQuery(\Slatch\TelegramBotClient\Arguments\AnswerPreCheckoutQueryArgument $argument): bool
+    public function answerPreCheckoutQuery(\Slatch\TelegramBotClient\Arguments\AnswerPreCheckoutQuery $argument): bool
     {
         $method = new \Slatch\TelegramBotClient\Methods\AnswerPreCheckoutQuery();
         $request = $this->buildRequest($method->getMethod(), $argument);

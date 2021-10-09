@@ -2,9 +2,6 @@
 
 namespace Slatch\TelegramBotClient\Entities;
 
-/**
- * @internal
- */
 class LabeledPrice extends BaseEntity
 {
     private string $label;

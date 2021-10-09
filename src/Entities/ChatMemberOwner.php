@@ -2,9 +2,6 @@
 
 namespace Slatch\TelegramBotClient\Entities;
 
-/**
- * @internal
- */
 class ChatMemberOwner extends ChatMember
 {
     private bool $isAnonymous;

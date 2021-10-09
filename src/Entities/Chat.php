@@ -4,9 +4,6 @@ namespace Slatch\TelegramBotClient\Entities;
 
 use Slatch\TelegramBotClient\Enums\ChatType;
 
-/**
- * @internal
- */
 class Chat extends BaseEntity
 {
     private int $id;

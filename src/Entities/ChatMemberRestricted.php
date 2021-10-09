@@ -2,9 +2,6 @@
 
 namespace Slatch\TelegramBotClient\Entities;
 
-/**
- * @internal
- */
 class ChatMemberRestricted extends ChatMember
 {
     private bool $canBeEdited;

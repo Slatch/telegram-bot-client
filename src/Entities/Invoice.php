@@ -2,9 +2,6 @@
 
 namespace Slatch\TelegramBotClient\Entities;
 
-/**
- * @internal
- */
 class Invoice extends BaseEntity
 {
     private string $title;

@@ -2,9 +2,6 @@
 
 namespace Slatch\TelegramBotClient\Entities;
 
-/**
- * @internal
- */
 class OrderInfo extends BaseEntity
 {
     private ?string $name;

@@ -2,9 +2,6 @@
 
 namespace Slatch\TelegramBotClient\Entities;
 
-/**
- * @internal
- */
 class ChatInviteLink extends BaseEntity
 {
     private string $inviteLink;

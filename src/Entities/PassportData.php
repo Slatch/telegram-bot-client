@@ -2,9 +2,6 @@
 
 namespace Slatch\TelegramBotClient\Entities;
 
-/**
- * @internal
- */
 class PassportData extends BaseEntity
 {
     /** @var EncryptedPassportElement[] */

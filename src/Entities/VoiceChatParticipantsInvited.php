@@ -2,9 +2,6 @@
 
 namespace Slatch\TelegramBotClient\Entities;
 
-/**
- * @internal
- */
 class VoiceChatParticipantsInvited extends BaseEntity
 {
     /** @var ?User[] */

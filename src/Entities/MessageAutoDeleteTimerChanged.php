@@ -2,9 +2,6 @@
 
 namespace Slatch\TelegramBotClient\Entities;
 
-/**
- * @internal
- */
 class MessageAutoDeleteTimerChanged extends BaseEntity
 {
     private int $messageAutoDeleteTime;

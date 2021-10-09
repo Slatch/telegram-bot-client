@@ -4,6 +4,9 @@ namespace Slatch\TelegramBotClient\Methods;
 
 use Psr\Http\Message\StreamInterface;
 
+/**
+ * @internal
+ */
 class SetChatTitle extends BaseMethod
 {
     protected const METHOD_URL = 'setChatTitle';

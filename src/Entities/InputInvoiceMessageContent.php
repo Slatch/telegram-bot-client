@@ -2,9 +2,6 @@
 
 namespace Slatch\TelegramBotClient\Entities;
 
-/**
- * @internal
- */
 class InputInvoiceMessageContent extends InputMessageContent
 {
     private string $title;

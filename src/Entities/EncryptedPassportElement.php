@@ -4,9 +4,6 @@ namespace Slatch\TelegramBotClient\Entities;
 
 use Slatch\TelegramBotClient\Enums\EncryptedPassportElementType;
 
-/**
- * @internal
- */
 class EncryptedPassportElement extends BaseEntity
 {
     /** @see EncryptedPassportElementType */

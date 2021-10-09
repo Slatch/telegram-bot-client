@@ -5,6 +5,9 @@ namespace Slatch\TelegramBotClient\Methods;
 use Psr\Http\Message\StreamInterface;
 use Slatch\TelegramBotClient\Entities\StickerSet;
 
+/**
+ * @internal
+ */
 class GetStickerSet extends BaseMethod
 {
     protected const METHOD_URL = 'getStickerSet';

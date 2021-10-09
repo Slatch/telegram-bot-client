@@ -5,6 +5,7 @@ namespace Slatch\TelegramBotClient\Methods;
 use Psr\Http\Message\StreamInterface;
 
 /**
+ * @internal
  * @link https://core.telegram.org/bots/api#close
  */
 class Close extends BaseMethod

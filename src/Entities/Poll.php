@@ -4,9 +4,6 @@ namespace Slatch\TelegramBotClient\Entities;
 
 use Slatch\TelegramBotClient\Enums\PollType;
 
-/**
- * @internal
- */
 class Poll extends BaseEntity
 {
     private string $id;

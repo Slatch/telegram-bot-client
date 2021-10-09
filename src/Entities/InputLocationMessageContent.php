@@ -2,9 +2,6 @@
 
 namespace Slatch\TelegramBotClient\Entities;
 
-/**
- * @internal
- */
 class InputLocationMessageContent extends InputMessageContent
 {
     private float $latitude;

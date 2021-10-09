@@ -2,9 +2,6 @@
 
 namespace Slatch\TelegramBotClient\Entities;
 
-/**
- * @internal
- */
 class VideoNote extends BaseEntity
 {
     private string $fileId;

@@ -2,9 +2,6 @@
 
 namespace Slatch\TelegramBotClient\Entities;
 
-/**
- * @internal
- */
 class InlineKeyboardMarkup extends BaseEntity
 {
     /** @var ?InlineKeyboardButton[][] */

@@ -2,9 +2,6 @@
 
 namespace Slatch\TelegramBotClient\Entities;
 
-/**
- * @internal
- */
 class KeyboardButton extends BaseEntity
 {
     private string $text;

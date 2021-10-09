@@ -4,9 +4,6 @@ namespace Slatch\TelegramBotClient\Entities;
 
 use Slatch\TelegramBotClient\Exceptions\NotImplementedException;
 
-/**
- * @internal
- */
 class InlineQueryResultArticle extends InlineQueryResult
 {
     private string $title;

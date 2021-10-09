@@ -2,9 +2,6 @@
 
 namespace Slatch\TelegramBotClient\Entities;
 
-/**
- * @internal
- */
 abstract class ChatMember extends BaseEntity
 {
     protected string $status;

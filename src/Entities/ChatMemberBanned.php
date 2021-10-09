@@ -2,9 +2,6 @@
 
 namespace Slatch\TelegramBotClient\Entities;
 
-/**
- * @internal
- */
 class ChatMemberBanned extends ChatMember
 {
     private int $untilDate;

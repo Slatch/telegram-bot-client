@@ -5,6 +5,9 @@ namespace Slatch\TelegramBotClient\Methods;
 use Psr\Http\Message\StreamInterface;
 use Slatch\TelegramBotClient\Exceptions\BadRequestException;
 
+/**
+ * @internal
+ */
 abstract class BaseMethod
 {
     /** @var string */

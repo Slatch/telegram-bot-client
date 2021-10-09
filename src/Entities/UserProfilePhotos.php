@@ -2,9 +2,6 @@
 
 namespace Slatch\TelegramBotClient\Entities;
 
-/**
- * @internal
- */
 class UserProfilePhotos extends BaseEntity
 {
     private int $totalCount;

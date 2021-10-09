@@ -2,9 +2,6 @@
 
 namespace Slatch\TelegramBotClient\Entities;
 
-/**
- * @internal
- */
 class ChatPhoto extends BaseEntity
 {
     private string $smallFileId;

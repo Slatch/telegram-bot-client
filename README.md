@@ -12,13 +12,13 @@ Usage:
 use Slatch\TelegramBotClient\Api\Config;
 use Slatch\TelegramBotClient\BotClient;
 use Slatch\TelegramBotClient\Bot\Credentials;
-use Slatch\TelegramBotClient\Arguments\SendMessageArgument;
+use Slatch\TelegramBotClient\Arguments\SendMessage;
 
 ...
 
 $botClient = new BotClient($httpClient, new Credentials($token), new Config('https://api.telegram.org'));
 
-$message = new SendMessageArgument();
+$message = new SendMessage();
 $message->setChatId(12345678);
 $message->setText("Hello World!");
 

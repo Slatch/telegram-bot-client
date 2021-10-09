@@ -2,9 +2,6 @@
 
 namespace Slatch\TelegramBotClient\Entities;
 
-/**
- * @internal
- */
 class CallbackGame extends BaseEntity
 {
     private int $userId;

@@ -6,6 +6,7 @@ use Psr\Http\Message\StreamInterface;
 use Slatch\TelegramBotClient\Entities\User;
 
 /**
+ * @internal
  * @link https://core.telegram.org/bots/api#getme
  */
 class GetMe extends BaseMethod

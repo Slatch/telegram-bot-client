@@ -2,9 +2,6 @@
 
 namespace Slatch\TelegramBotClient\Entities;
 
-/**
- * @internal
- */
 class SuccessfulPayment extends BaseEntity
 {
     private string $currency;

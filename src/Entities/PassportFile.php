@@ -2,9 +2,6 @@
 
 namespace Slatch\TelegramBotClient\Entities;
 
-/**
- * @internal
- */
 class PassportFile extends BaseEntity
 {
     private string $fileId;

@@ -2,9 +2,6 @@
 
 namespace Slatch\TelegramBotClient\Entities;
 
-/**
- * @internal
- */
 class ShippingAddress extends BaseEntity
 {
     private string $countryCode;

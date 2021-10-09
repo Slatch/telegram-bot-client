@@ -5,9 +5,6 @@ namespace Slatch\TelegramBotClient\Entities;
 use Slatch\TelegramBotClient\Enums\InputMediaTypes;
 use Slatch\TelegramBotClient\Exceptions\NotImplementedException;
 
-/**
- * @internal
- */
 class InputMediaAudio extends BaseEntity
 {
     /** @see InputMediaTypes::TYPE_AUDIO */

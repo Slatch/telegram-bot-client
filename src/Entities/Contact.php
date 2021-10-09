@@ -2,9 +2,6 @@
 
 namespace Slatch\TelegramBotClient\Entities;
 
-/**
- * @internal
- */
 class Contact extends BaseEntity
 {
     private string $phoneNumber;

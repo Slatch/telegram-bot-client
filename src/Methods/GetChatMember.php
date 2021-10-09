@@ -6,6 +6,9 @@ use Psr\Http\Message\StreamInterface;
 use Slatch\TelegramBotClient\Entities\ChatMember;
 use Slatch\TelegramBotClient\Exceptions\NotImplementedException;
 
+/**
+ * @internal
+ */
 class GetChatMember extends BaseMethod
 {
     protected const METHOD_URL = 'getChatMember';

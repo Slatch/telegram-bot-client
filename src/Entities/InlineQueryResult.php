@@ -2,9 +2,6 @@
 
 namespace Slatch\TelegramBotClient\Entities;
 
-/**
- * @internal
- */
 abstract class InlineQueryResult extends BaseEntity
 {
     protected string $type;

@@ -4,6 +4,9 @@ namespace Slatch\TelegramBotClient\Methods;
 
 use Psr\Http\Message\StreamInterface;
 
+/**
+ * @internal
+ */
 class AnswerCallbackQuery extends BaseMethod
 {
     protected const METHOD_URL = 'answerCallbackQuery';

@@ -6,6 +6,9 @@ use Psr\Http\Message\StreamInterface;
 use Slatch\TelegramBotClient\Entities\Message;
 use Slatch\TelegramBotClient\Entities\MessageId;
 
+/**
+ * @internal
+ */
 class CopyMessage extends BaseMethod
 {
     protected const METHOD_URL = 'copyMessage';
